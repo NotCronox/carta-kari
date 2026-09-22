@@ -1,0 +1,4724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#010113">
+  <meta name="description" content="una carta para Kari. 28.03.2025 — ∞">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>para mi Kari 💛</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23010113'/%3E%3Cg fill='%23e6f331'%3E%3Cellipse cx='16' cy='8' rx='3.2' ry='5'/%3E%3Cellipse cx='16' cy='24' rx='3.2' ry='5'/%3E%3Cellipse cx='8' cy='16' rx='5' ry='3.2'/%3E%3Cellipse cx='24' cy='16' rx='5' ry='3.2'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3.6' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&amp;family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   1. ESCENA ORIGINAL — jardín nocturno, flores amarillas, corazones
+   Animación de flores basada en el proyecto "floresamarillas" de Kevin Vargas
+   (@kvargasdev) — https://github.com/kevinvargasx
+   (CSS original conservado tal cual; los ajustes viven en la sección 2)
+   ========================================================================== */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #010113;
+}
+
+body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+  overflow: hidden;
+  perspective: 1000px;
+}
+.night {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  filter: blur(0.1vmin);
+  background-image: radial-gradient(
+      ellipse at top,
+      transparent 0%,
+      var(--dark-color)
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      var(--dark-color),
+      rgba(145, 233, 255, 0.2)
+    ),
+    repeating-linear-gradient(
+      220deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    repeating-linear-gradient(
+      189deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    repeating-linear-gradient(
+      148deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    linear-gradient(90deg, rgb(255, 94, 0), rgb(240, 240, 240));
+}
+
+.flowers {
+  position: relative;
+  transform: scale(0.9);
+}
+
+.flower {
+  position: absolute;
+  bottom: 10vmin;
+  transform-origin: bottom center;
+  z-index: 10;
+  --fl-speed: 0.8s;
+}
+.flower--1 {
+  -webkit-animation: moving-flower-1 4s linear infinite;
+  animation: moving-flower-1 4s linear infinite;
+}
+.flower--1 .flower__line {
+  height: 70vmin;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.flower--1 .flower__line__leaf--1 {
+  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.6s backwards;
+  animation: blooming-leaf-right var(--fl-speed) 1.6s backwards;
+}
+.flower--1 .flower__line__leaf--2 {
+  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.4s backwards;
+  animation: blooming-leaf-right var(--fl-speed) 1.4s backwards;
+}
+.flower--1 .flower__line__leaf--3 {
+  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.2s backwards;
+  animation: blooming-leaf-left var(--fl-speed) 1.2s backwards;
+}
+.flower--1 .flower__line__leaf--4 {
+  -webkit-animation: blooming-leaf-left var(--fl-speed) 1s backwards;
+  animation: blooming-leaf-left var(--fl-speed) 1s backwards;
+}
+.flower--1 .flower__line__leaf--5 {
+  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.8s backwards;
+  animation: blooming-leaf-right var(--fl-speed) 1.8s backwards;
+}
+.flower--1 .flower__line__leaf--6 {
+  -webkit-animation: blooming-leaf-left var(--fl-speed) 2s backwards;
+  animation: blooming-leaf-left var(--fl-speed) 2s backwards;
+}
+.flower--2 {
+  left: 50%;
+  transform: rotate(20deg);
+  -webkit-animation: moving-flower-2 4s linear infinite;
+  animation: moving-flower-2 4s linear infinite;
+}
+.flower--2 .flower__line {
+  height: 60vmin;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.flower--2 .flower__line__leaf--1 {
+  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.9s backwards;
+  animation: blooming-leaf-right var(--fl-speed) 1.9s backwards;
+}
+.flower--2 .flower__line__leaf--2 {
+  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.7s backwards;
+  animation: blooming-leaf-right var(--fl-speed) 1.7s backwards;
+}
+.flower--2 .flower__line__leaf--3 {
+  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.5s backwards;
+  animation: blooming-leaf-left var(--fl-speed) 1.5s backwards;
+}
+.flower--2 .flower__line__leaf--4 {
+  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.3s backwards;
+  animation: blooming-leaf-left var(--fl-speed) 1.3s backwards;
+}
+.flower--3 {
+  left: 50%;
+  transform: rotate(-15deg);
+  -webkit-animation: moving-flower-3 4s linear infinite;
+  animation: moving-flower-3 4s linear infinite;
+}
+.flower--3 .flower__line {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+.flower--3 .flower__line__leaf--1 {
+  -webkit-animation: blooming-leaf-right var(--fl-speed) 2.5s backwards;
+  animation: blooming-leaf-right var(--fl-speed) 2.5s backwards;
+}
+.flower--3 .flower__line__leaf--2 {
+  -webkit-animation: blooming-leaf-right var(--fl-speed) 2.3s backwards;
+  animation: blooming-leaf-right var(--fl-speed) 2.3s backwards;
+}
+.flower--3 .flower__line__leaf--3 {
+  -webkit-animation: blooming-leaf-left var(--fl-speed) 2.1s backwards;
+  animation: blooming-leaf-left var(--fl-speed) 2.1s backwards;
+}
+.flower--3 .flower__line__leaf--4 {
+  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
+  animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
+}
+.flower__leafs {
+  position: relative;
+  -webkit-animation: blooming-flower 2s backwards;
+  animation: blooming-flower 2s backwards;
+}
+.flower__leafs--1 {
+  -webkit-animation-delay: 1.1s;
+  animation-delay: 1.1s;
+}
+.flower__leafs--2 {
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+}
+.flower__leafs--3 {
+  -webkit-animation-delay: 1.7s;
+  animation-delay: 1.7s;
+}
+.flower__leafs::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -100%);
+  width: 8vmin;
+  height: 8vmin;
+  background-color: #e7b201;
+  filter: blur(10vmin);
+}
+.flower__leaf {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8vmin;
+  height: 11vmin;
+  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
+  background-color: #e6f331;
+  background-image: linear-gradient(to top, #e6f331, #e6f331);
+  transform-origin: bottom center;
+  opacity: 0.9;
+  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
+}
+.flower__leaf--1 {
+  transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
+}
+.flower__leaf--2 {
+  transform: translate(-50%, -4%) rotateX(40deg);
+}
+.flower__leaf--3 {
+  transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
+}
+.flower__leaf--4 {
+  width: 8vmin;
+  height: 8vmin;
+  transform-origin: bottom left;
+  border-radius: 4vmin 10vmin 4vmin 4vmin;
+  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
+  background-image: linear-gradient(to top, #e6f331, #e6f331);
+  z-index: 1;
+  opacity: 0.8;
+}
+.flower__white-circle {
+  position: absolute;
+  left: -3.5vmin;
+  top: -3vmin;
+  width: 9vmin;
+  height: 4vmin;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.flower__white-circle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border-radius: inherit;
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      67.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      112.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      112.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      22.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      22.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      157.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      67.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      67.5deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
+}
+.flower__line {
+  height: 55vmin;
+  width: 1.5vmin;
+  background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.2),
+      transparent,
+      rgba(255, 255, 255, 0.2)
+    ),
+    linear-gradient(to top, transparent 10%, #056d24, #028137);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  -webkit-animation: grow-flower-tree 4s backwards;
+  animation: grow-flower-tree 4s backwards;
+}
+.flower__line__leaf {
+  --w: 7vmin;
+  --h: calc(var(--w) + 2vmin);
+  position: absolute;
+  top: 20%;
+  left: 90%;
+  width: var(--w);
+  height: var(--h);
+  border-top-right-radius: var(--h);
+  border-bottom-left-radius: var(--h);
+  background-image: linear-gradient(to top, rgba(12, 94, 32, 0.4), #028137);
+}
+.flower__line__leaf--1 {
+  transform: rotate(70deg) rotateY(30deg);
+}
+.flower__line__leaf--2 {
+  top: 45%;
+  transform: rotate(70deg) rotateY(30deg);
+}
+.flower__line__leaf--3,
+.flower__line__leaf--4,
+.flower__line__leaf--6 {
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: var(--h);
+  border-bottom-right-radius: var(--h);
+  left: -460%;
+  top: 12%;
+  transform: rotate(-70deg) rotateY(30deg);
+}
+.flower__line__leaf--4 {
+  top: 40%;
+}
+.flower__line__leaf--5 {
+  top: 0;
+  transform-origin: left;
+  transform: rotate(70deg) rotateY(30deg) scale(0.6);
+}
+.flower__line__leaf--6 {
+  top: -2%;
+  left: -450%;
+  transform-origin: right;
+  transform: rotate(-70deg) rotateY(30deg) scale(0.6);
+}
+.flower__light {
+  position: absolute;
+  bottom: 0vmin;
+  width: 1vmin;
+  height: 1vmin;
+  background-color: rgb(255, 251, 0);
+  border-radius: 50%;
+  filter: blur(0.2vmin);
+  -webkit-animation: light-ans 4s linear infinite backwards;
+  animation: light-ans 4s linear infinite backwards;
+}
+.flower__light:nth-child(odd) {
+  background-color: #028137;
+}
+.flower__light--1 {
+  left: -2vmin;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.flower__light--2 {
+  left: 3vmin;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.flower__light--3 {
+  left: -6vmin;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.flower__light--4 {
+  left: 6vmin;
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+.flower__light--5 {
+  left: -1vmin;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+.flower__light--6 {
+  left: -4vmin;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.flower__light--7 {
+  left: 3vmin;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.flower__light--8 {
+  left: -6vmin;
+  -webkit-animation-delay: 3.5s;
+  animation-delay: 3.5s;
+}
+.flower__grass {
+  --c: #028137;
+  --line-w: 1.5vmin;
+  position: absolute;
+  bottom: 12vmin;
+  left: -7vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 20;
+  transform-origin: bottom center;
+  transform: rotate(-48deg) rotateY(40deg);
+}
+.flower__grass--1 {
+  -webkit-animation: moving-grass 2s linear infinite;
+  animation: moving-grass 2s linear infinite;
+}
+.flower__grass--2 {
+  left: 2vmin;
+  bottom: 10vmin;
+  transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
+  opacity: 0.8;
+  z-index: 0;
+  -webkit-animation: moving-grass--2 1.5s linear infinite;
+  animation: moving-grass--2 1.5s linear infinite;
+}
+.flower__grass--top {
+  width: 7vmin;
+  height: 10vmin;
+  border-top-right-radius: 100%;
+  border-right: var(--line-w) solid var(--c);
+  transform-origin: bottom center;
+  transform: rotate(-2deg);
+}
+.flower__grass--bottom {
+  margin-top: -2px;
+  width: var(--line-w);
+  height: 25vmin;
+  background-image: linear-gradient(to top, transparent, var(--c));
+}
+.flower__grass__leaf {
+  --size: 10vmin;
+  position: absolute;
+  width: calc(var(--size) * 2.1);
+  height: var(--size);
+  border-top-left-radius: var(--size);
+  border-top-right-radius: var(--size);
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    transparent 30%,
+    var(--c)
+  );
+  z-index: 100;
+}
+.flower__grass__leaf--1 {
+  top: -6%;
+  left: 30%;
+  --size: 6vmin;
+  transform: rotate(-20deg);
+  -webkit-animation: growing-grass-ans--1 2s 2.6s backwards;
+  animation: growing-grass-ans--1 2s 2.6s backwards;
+}
+@-webkit-keyframes growing-grass-ans--1 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-20deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--1 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-20deg) scale(0);
+  }
+}
+.flower__grass__leaf--2 {
+  top: -5%;
+  left: -110%;
+  --size: 6vmin;
+  transform: rotate(10deg);
+  -webkit-animation: growing-grass-ans--2 2s 2.4s linear backwards;
+  animation: growing-grass-ans--2 2s 2.4s linear backwards;
+}
+@-webkit-keyframes growing-grass-ans--2 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(10deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--2 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(10deg) scale(0);
+  }
+}
+.flower__grass__leaf--3 {
+  top: 5%;
+  left: 60%;
+  --size: 8vmin;
+  transform: rotate(-18deg) rotateX(-20deg);
+  -webkit-animation: growing-grass-ans--3 2s 2.2s linear backwards;
+  animation: growing-grass-ans--3 2s 2.2s linear backwards;
+}
+@-webkit-keyframes growing-grass-ans--3 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-18deg) rotateX(-20deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--3 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-18deg) rotateX(-20deg) scale(0);
+  }
+}
+.flower__grass__leaf--4 {
+  top: 6%;
+  left: -135%;
+  --size: 8vmin;
+  transform: rotate(2deg);
+  -webkit-animation: growing-grass-ans--4 2s 2s linear backwards;
+  animation: growing-grass-ans--4 2s 2s linear backwards;
+}
+@-webkit-keyframes growing-grass-ans--4 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(2deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--4 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(2deg) scale(0);
+  }
+}
+.flower__grass__leaf--5 {
+  top: 20%;
+  left: 60%;
+  --size: 10vmin;
+  transform: rotate(-24deg) rotateX(-20deg);
+  -webkit-animation: growing-grass-ans--5 2s 1.8s linear backwards;
+  animation: growing-grass-ans--5 2s 1.8s linear backwards;
+}
+@-webkit-keyframes growing-grass-ans--5 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-24deg) rotateX(-20deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--5 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-24deg) rotateX(-20deg) scale(0);
+  }
+}
+.flower__grass__leaf--6 {
+  top: 22%;
+  left: -180%;
+  --size: 10vmin;
+  transform: rotate(10deg);
+  -webkit-animation: growing-grass-ans--6 2s 1.6s linear backwards;
+  animation: growing-grass-ans--6 2s 1.6s linear backwards;
+}
+@-webkit-keyframes growing-grass-ans--6 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(10deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--6 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(10deg) scale(0);
+  }
+}
+.flower__grass__leaf--7 {
+  top: 39%;
+  left: 70%;
+  --size: 10vmin;
+  transform: rotate(-10deg);
+  -webkit-animation: growing-grass-ans--7 2s 1.4s linear backwards;
+  animation: growing-grass-ans--7 2s 1.4s linear backwards;
+}
+@-webkit-keyframes growing-grass-ans--7 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-10deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--7 {
+  0% {
+    transform-origin: bottom left;
+    transform: rotate(-10deg) scale(0);
+  }
+}
+.flower__grass__leaf--8 {
+  top: 40%;
+  left: -215%;
+  --size: 11vmin;
+  transform: rotate(10deg);
+  -webkit-animation: growing-grass-ans--8 2s 1.2s linear backwards;
+  animation: growing-grass-ans--8 2s 1.2s linear backwards;
+}
+@-webkit-keyframes growing-grass-ans--8 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(10deg) scale(0);
+  }
+}
+@keyframes growing-grass-ans--8 {
+  0% {
+    transform-origin: bottom right;
+    transform: rotate(10deg) scale(0);
+  }
+}
+.flower__grass__overlay {
+  position: absolute;
+  top: -10%;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: blur(1.5vmin);
+  z-index: 100;
+}
+.flower__g-long {
+  --w: 2vmin;
+  --h: 6vmin;
+  --c: #0d6632;
+  position: absolute;
+  bottom: 10vmin;
+  left: -3vmin;
+  transform-origin: bottom center;
+  transform: rotate(-30deg) rotateY(-20deg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  -webkit-animation: flower-g-long-ans 3s linear infinite;
+  animation: flower-g-long-ans 3s linear infinite;
+}
+@-webkit-keyframes flower-g-long-ans {
+  0%,
+  100% {
+    transform: rotate(-30deg) rotateY(-20deg);
+  }
+  50% {
+    transform: rotate(-32deg) rotateY(-20deg);
+  }
+}
+@keyframes flower-g-long-ans {
+  0%,
+  100% {
+    transform: rotate(-30deg) rotateY(-20deg);
+  }
+  50% {
+    transform: rotate(-32deg) rotateY(-20deg);
+  }
+}
+.flower__g-long__top {
+  top: calc(var(--h) * -1);
+  width: calc(var(--w) + 1vmin);
+  height: var(--h);
+  border-top-right-radius: 100%;
+  border-right: 0.7vmin solid var(--c);
+  transform: translate(-0.7vmin, 1vmin);
+}
+.flower__g-long__bottom {
+  width: var(--w);
+  height: 50vmin;
+  transform-origin: bottom center;
+  background-image: linear-gradient(to top, transparent 30%, var(--c));
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  -webkit-clip-path: polygon(35% 0, 65% 1%, 100% 100%, 0% 100%);
+  clip-path: polygon(35% 0, 65% 1%, 100% 100%, 0% 100%);
+}
+.flower__g-right {
+  position: absolute;
+  bottom: 6vmin;
+  left: -2vmin;
+  transform-origin: bottom left;
+  transform: rotate(20deg);
+}
+.flower__g-right .leaf {
+  width: 30vmin;
+  height: 50vmin;
+  border-top-left-radius: 100%;
+  border-left: 2vmin solid #028137;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    var(--dark-color) 60%
+  );
+  -webkit-mask-image: linear-gradient(to top, transparent 30%, #028137 60%);
+}
+.flower__g-right--1 {
+  -webkit-animation: flower-g-right-ans 2.5s linear infinite;
+  animation: flower-g-right-ans 2.5s linear infinite;
+}
+.flower__g-right--2 {
+  left: 5vmin;
+  transform: rotateY(-180deg);
+  -webkit-animation: flower-g-right-ans--2 3s linear infinite;
+  animation: flower-g-right-ans--2 3s linear infinite;
+}
+.flower__g-right--2 .leaf {
+  height: 75vmin;
+  filter: blur(0.3vmin);
+  opacity: 0.8;
+}
+@-webkit-keyframes flower-g-right-ans {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(24deg) rotateX(-20deg);
+  }
+}
+@keyframes flower-g-right-ans {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(24deg) rotateX(-20deg);
+  }
+}
+@-webkit-keyframes flower-g-right-ans--2 {
+  0%,
+  100% {
+    transform: rotateY(-180deg) rotate(0deg) rotateX(-20deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotate(6deg) rotateX(-20deg);
+  }
+}
+@keyframes flower-g-right-ans--2 {
+  0%,
+  100% {
+    transform: rotateY(-180deg) rotate(0deg) rotateX(-20deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotate(6deg) rotateX(-20deg);
+  }
+}
+.flower__g-front {
+  position: absolute;
+  bottom: 6vmin;
+  left: 2.5vmin;
+  z-index: 100;
+  transform-origin: bottom center;
+  transform: rotate(-28deg) rotateY(30deg) scale(1.04);
+  -webkit-animation: flower__g-front-ans 2s linear infinite;
+  animation: flower__g-front-ans 2s linear infinite;
+}
+@-webkit-keyframes flower__g-front-ans {
+  0%,
+  100% {
+    transform: rotate(-28deg) rotateY(30deg) scale(1.04);
+  }
+  50% {
+    transform: rotate(-35deg) rotateY(40deg) scale(1.04);
+  }
+}
+@keyframes flower__g-front-ans {
+  0%,
+  100% {
+    transform: rotate(-28deg) rotateY(30deg) scale(1.04);
+  }
+  50% {
+    transform: rotate(-35deg) rotateY(40deg) scale(1.04);
+  }
+}
+.flower__g-front__line {
+  width: 0.3vmin;
+  height: 20vmin;
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    #028137,
+    transparent 100%
+  );
+  position: relative;
+}
+.flower__g-front__leaf-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: bottom left;
+  transform: rotate(10deg);
+}
+.flower__g-front__leaf-wrapper:nth-child(even) {
+  left: 0vmin;
+  transform: rotateY(-180deg) rotate(5deg);
+  -webkit-animation: flower__g-front__leaf-left-ans 1s ease-in backwards;
+  animation: flower__g-front__leaf-left-ans 1s ease-in backwards;
+}
+.flower__g-front__leaf-wrapper:nth-child(odd) {
+  -webkit-animation: flower__g-front__leaf-ans 1s ease-in backwards;
+  animation: flower__g-front__leaf-ans 1s ease-in backwards;
+}
+.flower__g-front__leaf-wrapper--1 {
+  top: -8vmin;
+  transform: scale(0.7);
+  -webkit-animation: flower__g-front__leaf-ans 1s 5.5s ease-in backwards !important;
+  animation: flower__g-front__leaf-ans 1s 5.5s ease-in backwards !important;
+}
+.flower__g-front__leaf-wrapper--2 {
+  top: -8vmin;
+  transform: rotateY(-180deg) scale(0.7) !important;
+  -webkit-animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
+  animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
+}
+.flower__g-front__leaf-wrapper--3 {
+  top: -3vmin;
+  -webkit-animation: flower__g-front__leaf-ans 1s 4.6s ease-in backwards;
+  animation: flower__g-front__leaf-ans 1s 4.6s ease-in backwards;
+}
+.flower__g-front__leaf-wrapper--4 {
+  top: -3vmin;
+  transform: rotateY(-180deg) scale(0.9) !important;
+  -webkit-animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
+  animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
+}
+@-webkit-keyframes flower__g-front__leaf-left-ans-2 {
+  0% {
+    transform: rotateY(-180deg) scale(0);
+  }
+}
+@keyframes flower__g-front__leaf-left-ans-2 {
+  0% {
+    transform: rotateY(-180deg) scale(0);
+  }
+}
+.flower__g-front__leaf-wrapper--5,
+.flower__g-front__leaf-wrapper--6 {
+  top: 2vmin;
+}
+.flower__g-front__leaf-wrapper--7,
+.flower__g-front__leaf-wrapper--8 {
+  top: 6.5vmin;
+}
+.flower__g-front__leaf-wrapper--2 {
+  -webkit-animation-delay: 5.2s !important;
+  animation-delay: 5.2s !important;
+}
+.flower__g-front__leaf-wrapper--3 {
+  -webkit-animation-delay: 4.9s !important;
+  animation-delay: 4.9s !important;
+}
+.flower__g-front__leaf-wrapper--5 {
+  -webkit-animation-delay: 4.3s !important;
+  animation-delay: 4.3s !important;
+}
+.flower__g-front__leaf-wrapper--6 {
+  -webkit-animation-delay: 4.1s !important;
+  animation-delay: 4.1s !important;
+}
+.flower__g-front__leaf-wrapper--7 {
+  -webkit-animation-delay: 3.8s !important;
+  animation-delay: 3.8s !important;
+}
+.flower__g-front__leaf-wrapper--8 {
+  -webkit-animation-delay: 3.5s !important;
+  animation-delay: 3.5s !important;
+}
+@-webkit-keyframes flower__g-front__leaf-ans {
+  0% {
+    transform: rotate(10deg) scale(0);
+  }
+}
+@keyframes flower__g-front__leaf-ans {
+  0% {
+    transform: rotate(10deg) scale(0);
+  }
+}
+@-webkit-keyframes flower__g-front__leaf-left-ans {
+  0% {
+    transform: rotateY(-180deg) rotate(5deg) scale(0);
+  }
+}
+@keyframes flower__g-front__leaf-left-ans {
+  0% {
+    transform: rotateY(-180deg) rotate(5deg) scale(0);
+  }
+}
+.flower__g-front__leaf {
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
+  box-shadow: inset 0 2px 1vmin hsla(150, 97%, 14%, 0.2);
+  background-image: linear-gradient(
+      to bottom left,
+      transparent,
+      var(--dark-color)
+    ),
+    linear-gradient(to bottom right, #028137 50%, transparent 50%, transparent);
+  -webkit-mask-image: linear-gradient(
+    to bottom right,
+    #028137 50%,
+    transparent 50%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom right,
+    #028137 50%,
+    transparent 50%,
+    transparent
+  );
+}
+.flower__g-fr {
+  position: absolute;
+  bottom: -4vmin;
+  left: vmin;
+  transform-origin: bottom left;
+  z-index: 10;
+  -webkit-animation: flower__g-fr-ans 2s linear infinite;
+  animation: flower__g-fr-ans 2s linear infinite;
+}
+@-webkit-keyframes flower__g-fr-ans {
+  0%,
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes flower__g-fr-ans {
+  0%,
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+.flower__g-fr .leaf {
+  width: 30vmin;
+  height: 50vmin;
+  border-top-left-radius: 100%;
+  border-left: 2vmin solid #028137;
+  -webkit-mask-image: linear-gradient(to top, transparent 25%, #028137 50%);
+  position: relative;
+  z-index: 1;
+}
+.flower__g-fr__leaf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
+  box-shadow: inset 0 2px 1vmin hsla(184deg, 97%, 58%, 0.2);
+  background-image: linear-gradient(
+      to bottom left,
+      transparent,
+      var(--dark-color) 98%
+    ),
+    linear-gradient(to bottom right, #028137 45%, transparent 50%, transparent);
+  -webkit-mask-image: linear-gradient(
+    135deg,
+    #028137 40%,
+    transparent 50%,
+    transparent
+  );
+}
+.flower__g-fr__leaf--1 {
+  left: 20vmin;
+  transform: rotate(45deg);
+  -webkit-animation: flower__g-fr-leaft-ans-1 0.5s 5.2s linear backwards;
+  animation: flower__g-fr-leaft-ans-1 0.5s 5.2s linear backwards;
+}
+@-webkit-keyframes flower__g-fr-leaft-ans-1 {
+  0% {
+    transform-origin: left;
+    transform: rotate(45deg) scale(0);
+  }
+}
+@keyframes flower__g-fr-leaft-ans-1 {
+  0% {
+    transform-origin: left;
+    transform: rotate(45deg) scale(0);
+  }
+}
+.flower__g-fr__leaf--2 {
+  left: 12vmin;
+  top: -7vmin;
+  transform: rotate(25deg) rotateY(-180deg);
+  -webkit-animation: flower__g-fr-leaft-ans-6 0.5s 5s linear backwards;
+  animation: flower__g-fr-leaft-ans-6 0.5s 5s linear backwards;
+}
+.flower__g-fr__leaf--3 {
+  left: 15vmin;
+  top: 6vmin;
+  transform: rotate(55deg);
+  -webkit-animation: flower__g-fr-leaft-ans-5 0.5s 4.8s linear backwards;
+  animation: flower__g-fr-leaft-ans-5 0.5s 4.8s linear backwards;
+}
+.flower__g-fr__leaf--4 {
+  left: 6vmin;
+  top: -2vmin;
+  transform: rotate(25deg) rotateY(-180deg);
+  -webkit-animation: flower__g-fr-leaft-ans-6 0.5s 4.6s linear backwards;
+  animation: flower__g-fr-leaft-ans-6 0.5s 4.6s linear backwards;
+}
+.flower__g-fr__leaf--5 {
+  left: 10vmin;
+  top: 14vmin;
+  transform: rotate(55deg);
+  -webkit-animation: flower__g-fr-leaft-ans-5 0.5s 4.4s linear backwards;
+  animation: flower__g-fr-leaft-ans-5 0.5s 4.4s linear backwards;
+}
+@-webkit-keyframes flower__g-fr-leaft-ans-5 {
+  0% {
+    transform-origin: left;
+    transform: rotate(55deg) scale(0);
+  }
+}
+@keyframes flower__g-fr-leaft-ans-5 {
+  0% {
+    transform-origin: left;
+    transform: rotate(55deg) scale(0);
+  }
+}
+.flower__g-fr__leaf--6 {
+  left: 0vmin;
+  top: 6vmin;
+  transform: rotate(25deg) rotateY(-180deg);
+  -webkit-animation: flower__g-fr-leaft-ans-6 0.5s 4.2s linear backwards;
+  animation: flower__g-fr-leaft-ans-6 0.5s 4.2s linear backwards;
+}
+@-webkit-keyframes flower__g-fr-leaft-ans-6 {
+  0% {
+    transform-origin: right;
+    transform: rotate(25deg) rotateY(-180deg) scale(0);
+  }
+}
+@keyframes flower__g-fr-leaft-ans-6 {
+  0% {
+    transform-origin: right;
+    transform: rotate(25deg) rotateY(-180deg) scale(0);
+  }
+}
+.flower__g-fr__leaf--7 {
+  left: 5vmin;
+  top: 22vmin;
+  transform: rotate(45deg);
+  -webkit-animation: flower__g-fr-leaft-ans-7 0.5s 4s linear backwards;
+  animation: flower__g-fr-leaft-ans-7 0.5s 4s linear backwards;
+}
+@-webkit-keyframes flower__g-fr-leaft-ans-7 {
+  0% {
+    transform-origin: left;
+    transform: rotate(45deg) scale(0);
+  }
+}
+@keyframes flower__g-fr-leaft-ans-7 {
+  0% {
+    transform-origin: left;
+    transform: rotate(45deg) scale(0);
+  }
+}
+.flower__g-fr__leaf--8 {
+  left: -4vmin;
+  top: 15vmin;
+  transform: rotate(15deg) rotateY(-180deg);
+  -webkit-animation: flower__g-fr-leaft-ans-8 0.5s 3.8s linear backwards;
+  animation: flower__g-fr-leaft-ans-8 0.5s 3.8s linear backwards;
+}
+@-webkit-keyframes flower__g-fr-leaft-ans-8 {
+  0% {
+    transform-origin: right;
+    transform: rotate(15deg) rotateY(-180deg) scale(0);
+  }
+}
+@keyframes flower__g-fr-leaft-ans-8 {
+  0% {
+    transform-origin: right;
+    transform: rotate(15deg) rotateY(-180deg) scale(0);
+  }
+}
+
+.long-g {
+  position: absolute;
+  bottom: 25vmin;
+  left: -42vmin;
+  transform-origin: bottom left;
+}
+.long-g--1 {
+  bottom: 0vmin;
+  transform: scale(0.8) rotate(-5deg);
+}
+.long-g--1 .leaf {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 40%,
+    #028137 80%
+  ) !important;
+}
+.long-g--1 .leaf--1 {
+  --w: 5vmin;
+  --h: 60vmin;
+  left: -2vmin;
+  transform: rotate(3deg) rotateY(-180deg);
+}
+.long-g--2,
+.long-g--3 {
+  bottom: -3vmin;
+  left: -35vmin;
+  transform-origin: center;
+  transform: scale(0.6) rotateX(60deg);
+}
+.long-g--2 .leaf,
+.long-g--3 .leaf {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 50%,
+    #e6f331 80%
+  ) !important;
+}
+.long-g--2 .leaf--1,
+.long-g--3 .leaf--1 {
+  left: -1vmin;
+  transform: rotateY(-180deg);
+}
+.long-g--3 {
+  left: -17vmin;
+  bottom: 0vmin;
+}
+.long-g--3 .leaf {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 40%,
+    #028137 80%
+  ) !important;
+}
+.long-g--4 {
+  left: 25vmin;
+  bottom: -3vmin;
+  transform-origin: center;
+  transform: scale(0.6) rotateX(60deg);
+}
+.long-g--4 .leaf {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 50%,
+    #028137 80%
+  ) !important;
+}
+.long-g--5 {
+  left: 42vmin;
+  bottom: 0vmin;
+  transform: scale(0.8) rotate(2deg);
+}
+.long-g--6 {
+  left: 0vmin;
+  bottom: -20vmin;
+  z-index: 100;
+  filter: blur(0.3vmin);
+  transform: scale(0.8) rotate(2deg);
+}
+.long-g--7 {
+  left: 35vmin;
+  bottom: 20vmin;
+  z-index: -1;
+  filter: blur(0.3vmin);
+  transform: scale(0.6) rotate(2deg);
+  opacity: 0.7;
+}
+.long-g .leaf {
+  --w: 15vmin;
+  --h: 40vmin;
+  --c: #1aaa15;
+  position: absolute;
+  bottom: 0;
+  width: var(--w);
+  height: var(--h);
+  border-top-left-radius: 100%;
+  border-left: 2vmin solid var(--c);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 20%,
+    var(--dark-color)
+  );
+  transform-origin: bottom center;
+}
+.long-g .leaf--0 {
+  left: 2vmin;
+  -webkit-animation: leaf-ans-1 4s linear infinite;
+  animation: leaf-ans-1 4s linear infinite;
+}
+.long-g .leaf--1 {
+  --w: 5vmin;
+  --h: 60vmin;
+  -webkit-animation: leaf-ans-1 4s linear infinite;
+  animation: leaf-ans-1 4s linear infinite;
+}
+.long-g .leaf--2 {
+  --w: 10vmin;
+  --h: 40vmin;
+  left: -0.5vmin;
+  bottom: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateY(-180deg);
+  -webkit-animation: leaf-ans-2 3s linear infinite;
+  animation: leaf-ans-2 3s linear infinite;
+}
+.long-g .leaf--3 {
+  --w: 5vmin;
+  --h: 30vmin;
+  left: -1vmin;
+  bottom: 3.2vmin;
+  transform-origin: bottom left;
+  transform: rotate(-10deg) rotateY(-180deg);
+  -webkit-animation: leaf-ans-3 3s linear infinite;
+  animation: leaf-ans-3 3s linear infinite;
+}
+
+@-webkit-keyframes leaf-ans-1 {
+  0%,
+  100% {
+    transform: rotate(-5deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.1);
+  }
+}
+
+@keyframes leaf-ans-1 {
+  0%,
+  100% {
+    transform: rotate(-5deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.1);
+  }
+}
+@-webkit-keyframes leaf-ans-2 {
+  0%,
+  100% {
+    transform: rotateY(-180deg) rotate(5deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotate(0deg) scale(1.1);
+  }
+}
+@keyframes leaf-ans-2 {
+  0%,
+  100% {
+    transform: rotateY(-180deg) rotate(5deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotate(0deg) scale(1.1);
+  }
+}
+@-webkit-keyframes leaf-ans-3 {
+  0%,
+  100% {
+    transform: rotate(-10deg) rotateY(-180deg);
+  }
+  50% {
+    transform: rotate(-20deg) rotateY(-180deg);
+  }
+}
+@keyframes leaf-ans-3 {
+  0%,
+  100% {
+    transform: rotate(-10deg) rotateY(-180deg);
+  }
+  50% {
+    transform: rotate(-20deg) rotateY(-180deg);
+  }
+}
+.grow-ans {
+  -webkit-animation: grow-ans 2s var(--d) backwards;
+  animation: grow-ans 2s var(--d) backwards;
+}
+
+@-webkit-keyframes grow-ans {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes grow-ans {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes light-ans {
+  0% {
+    opacity: 0;
+    transform: translateY(0vmin);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-5vmin) translateX(-2vmin);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15vmin) translateX(2vmin);
+    filter: blur(0.2vmin);
+  }
+  75% {
+    transform: translateY(-20vmin) translateX(-2vmin);
+    filter: blur(0.2vmin);
+  }
+  100% {
+    transform: translateY(-30vmin);
+    opacity: 0;
+    filter: blur(1vmin);
+  }
+}
+@keyframes light-ans {
+  0% {
+    opacity: 0;
+    transform: translateY(0vmin);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-5vmin) translateX(-2vmin);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15vmin) translateX(2vmin);
+    filter: blur(0.2vmin);
+  }
+  75% {
+    transform: translateY(-20vmin) translateX(-2vmin);
+    filter: blur(0.2vmin);
+  }
+  100% {
+    transform: translateY(-30vmin);
+    opacity: 0;
+    filter: blur(1vmin);
+  }
+}
+@-webkit-keyframes moving-flower-1 {
+  0%,
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes moving-flower-1 {
+  0%,
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+@-webkit-keyframes moving-flower-2 {
+  0%,
+  100% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+}
+@keyframes moving-flower-2 {
+  0%,
+  100% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+}
+@-webkit-keyframes moving-flower-3 {
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(-20deg) rotateY(-10deg);
+  }
+}
+@keyframes moving-flower-3 {
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(-20deg) rotateY(-10deg);
+  }
+}
+@-webkit-keyframes blooming-leaf-right {
+  0% {
+    transform-origin: left;
+    transform: rotate(70deg) rotateY(30deg) scale(0);
+  }
+}
+@keyframes blooming-leaf-right {
+  0% {
+    transform-origin: left;
+    transform: rotate(70deg) rotateY(30deg) scale(0);
+  }
+}
+@-webkit-keyframes blooming-leaf-left {
+  0% {
+    transform-origin: right;
+    transform: rotate(-70deg) rotateY(30deg) scale(0);
+  }
+}
+@keyframes blooming-leaf-left {
+  0% {
+    transform-origin: right;
+    transform: rotate(-70deg) rotateY(30deg) scale(0);
+  }
+}
+@-webkit-keyframes grow-flower-tree {
+  0% {
+    height: 0;
+    border-radius: 1vmin;
+  }
+}
+@keyframes grow-flower-tree {
+  0% {
+    height: 0;
+    border-radius: 1vmin;
+  }
+}
+@-webkit-keyframes blooming-flower {
+  0% {
+    transform: scale(0);
+  }
+}
+@keyframes blooming-flower {
+  0% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes moving-grass {
+  0%,
+  100% {
+    transform: rotate(-48deg) rotateY(40deg);
+  }
+  50% {
+    transform: rotate(-50deg) rotateY(40deg);
+  }
+}
+@keyframes moving-grass {
+  0%,
+  100% {
+    transform: rotate(-48deg) rotateY(40deg);
+  }
+  50% {
+    transform: rotate(-50deg) rotateY(40deg);
+  }
+}
+@-webkit-keyframes moving-grass--2 {
+  0%,
+  100% {
+    transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
+  }
+  50% {
+    transform: scale(0.5) rotate(79deg) rotateX(10deg) rotateY(-200deg);
+  }
+}
+@keyframes moving-grass--2 {
+  0%,
+  100% {
+    transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
+  }
+  50% {
+    transform: scale(0.5) rotate(79deg) rotateX(10deg) rotateY(-200deg);
+  }
+}
+.growing-grass {
+  -webkit-animation: growing-grass-ans 1s 2s backwards;
+  animation: growing-grass-ans 1s 2s backwards;
+}
+
+@-webkit-keyframes growing-grass-ans {
+  0% {
+    transform: scale(0);
+  }
+}
+
+@keyframes growing-grass-ans {
+  0% {
+    transform: scale(0);
+  }
+}
+.container * {
+  -webkit-animation-play-state: paused !important;
+  animation-play-state: paused !important;
+} /*# sourceMappingURL=main.css.map */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  z-index: 200;
+  border-radius: 50%;
+}
+.bubble:nth-child(1) {
+  top: 8%;
+  left: 60%;
+
+  height: 11vmin;
+  width: 11vmin;
+  -webkit-animation: love-burst 3s infinite 0s;
+  animation: love-burst 3s infinite 0s;
+  box-shadow: inset 0 0 0 5.5vmin transparent;
+  -webkit-transform: translate(0, 0.05em) scale(0);
+  transform: translate(0, 0.05em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(2) {
+  top: 83%;
+  left: 14%;
+  height: 20vmin;
+  width: 20vmin;
+  -webkit-animation: love-burst 3s infinite 0.15s;
+  animation: love-burst 3s infinite 0.15s;
+  box-shadow: inset 0 0 0 10vmin transparent;
+  -webkit-transform: translate(0, 0.75em) scale(0);
+  transform: translate(0, 0.75em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(3) {
+  top: 25%;
+  left: 49%;
+  height: 4vmin;
+  width: 4vmin;
+  -webkit-animation: love-burst 3s infinite 0.3s;
+  animation: love-burst 3s infinite 0.3s;
+  box-shadow: inset 0 0 0 2vmin transparent;
+  -webkit-transform: translate(0, 0.5em) scale(0);
+  transform: translate(0, 0.5em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(4) {
+  top: 63%;
+  left: 93%;
+  height: 3vmin;
+  width: 3vmin;
+  -webkit-animation: love-burst 3s infinite 0.45s;
+  animation: love-burst 3s infinite 0.45s;
+  box-shadow: inset 0 0 0 1.5vmin transparent;
+  -webkit-transform: translate(0, 0.35em) scale(0);
+  transform: translate(0, 0.35em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(5) {
+  top: 7%;
+  left: 56%;
+  height: 18vmin;
+  width: 18vmin;
+  -webkit-animation: love-burst 3s infinite 0.6s;
+  animation: love-burst 3s infinite 0.6s;
+  box-shadow: inset 0 0 0 9vmin transparent;
+  -webkit-transform: translate(0, 0.3em) scale(0);
+  transform: translate(0, 0.3em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(6) {
+  top: 10%;
+  left: 68%;
+  height: 5vmin;
+  width: 5vmin;
+  -webkit-animation: love-burst 3s infinite 0.75s;
+  animation: love-burst 3s infinite 0.75s;
+  box-shadow: inset 0 0 0 2.5vmin transparent;
+  -webkit-transform: translate(0, 1.1em) scale(0);
+  transform: translate(0, 1.1em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(7) {
+  top: 68%;
+  left: 1%;
+  height: 5vmin;
+  width: 5vmin;
+  -webkit-animation: love-burst 3s infinite 0.9s;
+  animation: love-burst 3s infinite 0.9s;
+  box-shadow: inset 0 0 0 2.5vmin transparent;
+  -webkit-transform: translate(0, 0.15em) scale(0);
+  transform: translate(0, 0.15em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(8) {
+  top: 61%;
+  left: 51%;
+  height: 11vmin;
+  width: 11vmin;
+  -webkit-animation: love-burst 3s infinite 1.05s;
+  animation: love-burst 3s infinite 1.05s;
+  box-shadow: inset 0 0 0 5.5vmin transparent;
+  -webkit-transform: translate(0, 1.05em) scale(0);
+  transform: translate(0, 1.05em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(9) {
+  top: 24%;
+  left: 45%;
+  height: 11vmin;
+  width: 11vmin;
+  -webkit-animation: love-burst 3s infinite 1.2s;
+  animation: love-burst 3s infinite 1.2s;
+  box-shadow: inset 0 0 0 5.5vmin transparent;
+  -webkit-transform: translate(0, 1em) scale(0);
+  transform: translate(0, 1em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(10) {
+  top: 13%;
+  left: 10%;
+  height: 19vmin;
+  width: 19vmin;
+  -webkit-animation: love-burst 3s infinite 1.35s;
+  animation: love-burst 3s infinite 1.35s;
+  box-shadow: inset 0 0 0 9.5vmin transparent;
+  -webkit-transform: translate(0, 1em) scale(0);
+  transform: translate(0, 1em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(11) {
+  top: 76%;
+  left: 7%;
+  height: 14vmin;
+  width: 14vmin;
+  -webkit-animation: love-burst 3s infinite 1.5s;
+  animation: love-burst 3s infinite 1.5s;
+  box-shadow: inset 0 0 0 7vmin transparent;
+  -webkit-transform: translate(0, 0.1em) scale(0);
+  transform: translate(0, 0.1em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(12) {
+  top: 22%;
+  left: 8%;
+  height: 17vmin;
+  width: 17vmin;
+  -webkit-animation: love-burst 3s infinite 1.65s;
+  animation: love-burst 3s infinite 1.65s;
+  box-shadow: inset 0 0 0 8.5vmin transparent;
+  -webkit-transform: translate(0, 0.2em) scale(0);
+  transform: translate(0, 0.2em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(13) {
+  top: 23%;
+  left: 81%;
+  height: 16vmin;
+  width: 16vmin;
+  -webkit-animation: love-burst 3s infinite 1.8s;
+  animation: love-burst 3s infinite 1.8s;
+  box-shadow: inset 0 0 0 8vmin transparent;
+  -webkit-transform: translate(0, 0.1em) scale(0);
+  transform: translate(0, 0.1em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(14) {
+  top: 77%;
+  left: 88%;
+  height: 3vmin;
+  width: 3vmin;
+  -webkit-animation: love-burst 3s infinite 1.95s;
+  animation: love-burst 3s infinite 1.95s;
+  box-shadow: inset 0 0 0 1.5vmin transparent;
+  -webkit-transform: translate(0, 0.45em) scale(0);
+  transform: translate(0, 0.45em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(15) {
+  top: 41%;
+  left: 1%;
+  height: 9vmin;
+  width: 9vmin;
+  -webkit-animation: love-burst 3s infinite 2.1s;
+  animation: love-burst 3s infinite 2.1s;
+  box-shadow: inset 0 0 0 4.5vmin transparent;
+  -webkit-transform: translate(0, 0.05em) scale(0);
+  transform: translate(0, 0.05em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(16) {
+  top: 51%;
+  left: 51%;
+  height: 8vmin;
+  width: 8vmin;
+  -webkit-animation: love-burst 3s infinite 2.25s;
+  animation: love-burst 3s infinite 2.25s;
+  box-shadow: inset 0 0 0 4vmin transparent;
+  -webkit-transform: translate(0, 1.15em) scale(0);
+  transform: translate(0, 1.15em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(17) {
+  top: 37%;
+  left: 65%;
+  height: 11vmin;
+  width: 11vmin;
+  -webkit-animation: love-burst 3s infinite 2.4s;
+  animation: love-burst 3s infinite 2.4s;
+  box-shadow: inset 0 0 0 5.5vmin transparent;
+  -webkit-transform: translate(0, 0.2em) scale(0);
+  transform: translate(0, 0.2em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(18) {
+  top: 11%;
+  left: 83%;
+  height: 18vmin;
+  width: 18vmin;
+  -webkit-animation: love-burst 3s infinite 2.55s;
+  animation: love-burst 3s infinite 2.55s;
+  box-shadow: inset 0 0 0 9vmin transparent;
+  -webkit-transform: translate(0, 0.9em) scale(0);
+  transform: translate(0, 0.9em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(19) {
+  top: 64%;
+  left: 86%;
+  height: 12vmin;
+  width: 12vmin;
+  -webkit-animation: love-burst 3s infinite 2.7s;
+  animation: love-burst 3s infinite 2.7s;
+  box-shadow: inset 0 0 0 6vmin transparent;
+  -webkit-transform: translate(0, 0.65em) scale(0);
+  transform: translate(0, 0.65em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bubble:nth-child(20) {
+  top: 39%;
+  left: 24%;
+  height: 19vmin;
+  width: 19vmin;
+  -webkit-animation: love-burst 3s infinite 2.85s;
+  animation: love-burst 3s infinite 2.85s;
+  box-shadow: inset 0 0 0 9.5vmin transparent;
+  -webkit-transform: translate(0, 0.2em) scale(0);
+  transform: translate(0, 0.2em) scale(0);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+@-webkit-keyframes love-burst {
+  50%,
+  100% {
+    box-shadow: inset 0 0 0 0 rgb(1, 175, 73);
+    -webkit-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes love-burst {
+  50%,
+  100% {
+    box-shadow: inset 0 0 0 0 rgb(18, 226, 129);
+    -webkit-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
+  }
+}
+.heart {
+  fill: transparent;
+  opacity: 0;
+}
+.bubble:nth-child(1) .heart {
+  -webkit-animation: love 3s forwards infinite 0s;
+  animation: love 3s forwards infinite 0s;
+  -webkit-transform: scale(0.5) rotate(-4deg);
+  transform: scale(0.5) rotate(-4deg);
+}
+.bubble:nth-child(2) .heart {
+  -webkit-animation: love 3s forwards infinite 0.15s;
+  animation: love 3s forwards infinite 0.15s;
+  -webkit-transform: scale(0.5) rotate(22deg);
+  transform: scale(0.5) rotate(22deg);
+}
+.bubble:nth-child(3) .heart {
+  -webkit-animation: love 3s forwards infinite 0.3s;
+  animation: love 3s forwards infinite 0.3s;
+  -webkit-transform: scale(0.5) rotate(-5deg);
+  transform: scale(0.5) rotate(-5deg);
+}
+.bubble:nth-child(4) .heart {
+  -webkit-animation: love 3s forwards infinite 0.45s;
+  animation: love 3s forwards infinite 0.45s;
+  -webkit-transform: scale(0.5) rotate(50deg);
+  transform: scale(0.5) rotate(50deg);
+}
+.bubble:nth-child(5) .heart {
+  -webkit-animation: love 3s forwards infinite 0.6s;
+  animation: love 3s forwards infinite 0.6s;
+  -webkit-transform: scale(0.5) rotate(-29deg);
+  transform: scale(0.5) rotate(-29deg);
+}
+.bubble:nth-child(6) .heart {
+  -webkit-animation: love 3s forwards infinite 0.75s;
+  animation: love 3s forwards infinite 0.75s;
+  -webkit-transform: scale(0.5) rotate(35deg);
+  transform: scale(0.5) rotate(35deg);
+}
+.bubble:nth-child(7) .heart {
+  -webkit-animation: love 3s forwards infinite 0.9s;
+  animation: love 3s forwards infinite 0.9s;
+  -webkit-transform: scale(0.5) rotate(-5deg);
+  transform: scale(0.5) rotate(-5deg);
+}
+.bubble:nth-child(8) .heart {
+  -webkit-animation: love 3s forwards infinite 1.05s;
+  animation: love 3s forwards infinite 1.05s;
+  -webkit-transform: scale(0.5) rotate(40deg);
+  transform: scale(0.5) rotate(40deg);
+}
+.bubble:nth-child(9) .heart {
+  -webkit-animation: love 3s forwards infinite 1.2s;
+  animation: love 3s forwards infinite 1.2s;
+  -webkit-transform: scale(0.5) rotate(-35deg);
+  transform: scale(0.5) rotate(-35deg);
+}
+.bubble:nth-child(10) .heart {
+  -webkit-animation: love 3s forwards infinite 1.35s;
+  animation: love 3s forwards infinite 1.35s;
+  -webkit-transform: scale(0.5) rotate(28deg);
+  transform: scale(0.5) rotate(28deg);
+}
+.bubble:nth-child(11) .heart {
+  -webkit-animation: love 3s forwards infinite 1.5s;
+  animation: love 3s forwards infinite 1.5s;
+  -webkit-transform: scale(0.5) rotate(-3deg);
+  transform: scale(0.5) rotate(-3deg);
+}
+.bubble:nth-child(12) .heart {
+  -webkit-animation: love 3s forwards infinite 1.65s;
+  animation: love 3s forwards infinite 1.65s;
+  -webkit-transform: scale(0.5) rotate(48deg);
+  transform: scale(0.5) rotate(48deg);
+}
+.bubble:nth-child(13) .heart {
+  -webkit-animation: love 3s forwards infinite 1.8s;
+  animation: love 3s forwards infinite 1.8s;
+  -webkit-transform: scale(0.5) rotate(-33deg);
+  transform: scale(0.5) rotate(-33deg);
+}
+.bubble:nth-child(14) .heart {
+  -webkit-animation: love 3s forwards infinite 1.95s;
+  animation: love 3s forwards infinite 1.95s;
+  -webkit-transform: scale(0.5) rotate(40deg);
+  transform: scale(0.5) rotate(40deg);
+}
+.bubble:nth-child(15) .heart {
+  -webkit-animation: love 3s forwards infinite 2.1s;
+  animation: love 3s forwards infinite 2.1s;
+  -webkit-transform: scale(0.5) rotate(-29deg);
+  transform: scale(0.5) rotate(-29deg);
+}
+.bubble:nth-child(16) .heart {
+  -webkit-animation: love 3s forwards infinite 2.25s;
+  animation: love 3s forwards infinite 2.25s;
+  -webkit-transform: scale(0.5) rotate(19deg);
+  transform: scale(0.5) rotate(19deg);
+}
+.bubble:nth-child(17) .heart {
+  -webkit-animation: love 3s forwards infinite 2.4s;
+  animation: love 3s forwards infinite 2.4s;
+  -webkit-transform: scale(0.5) rotate(-29deg);
+  transform: scale(0.5) rotate(-29deg);
+}
+.bubble:nth-child(18) .heart {
+  -webkit-animation: love 3s forwards infinite 2.55s;
+  animation: love 3s forwards infinite 2.55s;
+  -webkit-transform: scale(0.5) rotate(14deg);
+  transform: scale(0.5) rotate(14deg);
+}
+.bubble:nth-child(19) .heart {
+  -webkit-animation: love 3s forwards infinite 2.7s;
+  animation: love 3s forwards infinite 2.7s;
+  -webkit-transform: scale(0.5) rotate(-10deg);
+  transform: scale(0.5) rotate(-10deg);
+}
+.bubble:nth-child(20) .heart {
+  -webkit-animation: love 3s forwards infinite 2.85s;
+  animation: love 3s forwards infinite 2.85s;
+  -webkit-transform: scale(0.5) rotate(46deg);
+  transform: scale(0.5) rotate(46deg);
+}
+
+@-webkit-keyframes love {
+  50% {
+    fill: rgb(253, 66, 19);
+    opacity: 1;
+  }
+}
+
+@keyframes love {
+  50% {
+    fill: rgb(253, 93, 19);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   2. LA CARTA — tokens, escena de fondo, máquina de escribir y carta completa
+   ========================================================================== */
+
+/* --- 2.1 Tokens ---------------------------------------------------------- */
+:root {
+  --dark-color: #010113;
+
+  --ink:        #f5f0e4;
+  --ink-soft:   rgba(245, 240, 228, 0.74);
+  --ink-faint:  rgba(245, 240, 228, 0.46);
+
+  --gold:       #ffd95a;
+  --gold-warm:  #f7c948;
+
+  --glass:      rgba(9, 12, 32, 0.46);
+  --glass-deep: rgba(6, 8, 24, 0.74);
+  --hair:       rgba(255, 217, 90, 0.16);
+  --hair-soft:  rgba(255, 217, 90, 0.08);
+
+  --serif:   'Lora', Georgia, 'Times New Roman', serif;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --hand:    'Caveat', 'Segoe Script', 'Bradley Hand', 'Brush Script MT', cursive;
+  --mono:    ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', Menlo, Consolas, monospace;
+
+  --measure: 34rem;
+  --gutter: clamp(1.15rem, 5vw, 2.5rem);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* --- 2.2 Base ------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* se anula el layout flex del original: ahora el flex vive en .scene */
+  display: block;
+  align-items: initial;
+  justify-content: initial;
+  perspective: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* el scroll sólo existe en el modo "carta completa" */
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
+  height: 100%;
+}
+
+[hidden] { display: none !important; }
+
+::selection { background: rgba(255, 217, 90, 0.28); color: #fff; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* --- 2.3 Escena de fondo (noche + flores + corazones) --------------------- */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  perspective: 1000px;   /* el original lo tenía en body; los pétalos 3D lo necesitan */
+  overflow: hidden;
+  pointer-events: none;
+  transform-origin: 50% 100%;
+  transition: transform 2s var(--ease);
+  will-change: transform;
+}
+
+/* al abrir la carta las flores retroceden un poco: dan profundidad, no estorban */
+html.is-open .scene { transform: scale(0.93) translateY(1.5vh); }
+
+/* velo: oscurece justo donde se lee y deja las flores encendidas abajo */
+.veil {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.3;                     /* en la portada las flores mandan */
+  transition: opacity 1.8s ease;
+  background:
+    radial-gradient(125% 85% at 50% 34%,
+      rgba(1, 1, 19, 0.80) 0%,
+      rgba(1, 1, 19, 0.66) 34%,
+      rgba(1, 1, 19, 0.40) 62%,
+      rgba(1, 1, 19, 0.08) 100%),
+    linear-gradient(to bottom,
+      rgba(1, 1, 19, 0.62) 0%,
+      rgba(1, 1, 19, 0.00) 24%,
+      rgba(1, 1, 19, 0.00) 70%,
+      rgba(1, 1, 19, 0.55) 100%);
+}
+html.is-open .veil { opacity: 0.85; }
+
+/* destello cálido: las flores "responden" a las frases importantes */
+.bloom {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  background: radial-gradient(72% 58% at 50% 84%,
+    rgba(255, 214, 110, 0.42),
+    rgba(255, 190, 60, 0.12) 46%,
+    transparent 74%);
+}
+.bloom.is-on { opacity: 1; transition-duration: 0.45s; }
+
+/* partículas, pétalos y corazones */
+.fx {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* las flores, un poco más cálidas y con más luz que en el original */
+.flower__leaf {
+  background-image: linear-gradient(to top, #d9d21c, #f2fb4a);
+  box-shadow:
+    inset 0 0 2vmin rgba(255, 255, 255, 0.55),
+    0 0 4vmin rgba(255, 217, 90, 0.22);
+}
+.flower__leaf--4 { background-image: linear-gradient(to top, #cdc61a, #eaf344); }
+.flower__leafs::after {
+  background-color: #ffc93c;
+  filter: blur(11vmin);
+  opacity: 0.85;
+}
+.flower__white-circle { box-shadow: 0 0 3vmin rgba(255, 236, 170, 0.5); }
+
+/* corazones del fondo: mismo movimiento, pero cálidos, lentos y discretos.
+   se redefinen los keyframes del original (gana la última definición). */
+.bubbles { opacity: 0.4; }
+html.is-open  .bubbles { opacity: 0.3; }
+/* mientras se escribe la carta el texto va directo sobre el fondo:
+   los corazones bajan a puro ambiente */
+html.mode-read .bubbles { opacity: 0.14; }
+.bubbles .bubble { animation-duration: 6.5s; }
+.bubbles .bubble .heart { animation-duration: 6.5s; }
+
+@-webkit-keyframes love-burst {
+  50%, 100% {
+    box-shadow: inset 0 0 0 0 rgba(255, 208, 120, 0.16);
+    -webkit-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
+  }
+}
+@keyframes love-burst {
+  50%, 100% {
+    box-shadow: inset 0 0 0 0 rgba(255, 208, 120, 0.16);
+    -webkit-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
+  }
+}
+@-webkit-keyframes love { 50% { fill: #ffc79c; opacity: 0.8; } }
+@keyframes love          { 50% { fill: #ffc79c; opacity: 0.8; } }
+
+/* --- 2.4 Barra de progreso ----------------------------------------------- */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+html.is-open .progress { opacity: 1; }
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(255, 217, 90, 0), var(--gold-warm), rgba(255, 217, 90, 0.5));
+  box-shadow: 0 0 10px rgba(255, 217, 90, 0.5);
+  transition: width 0.4s linear;
+}
+
+/* --- 2.5 Portada --------------------------------------------------------- */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--gutter) + env(safe-area-inset-top)) var(--gutter)
+           calc(var(--gutter) + env(safe-area-inset-bottom));
+  text-align: center;
+  transition: opacity 1.1s ease, transform 1.4s var(--ease), filter 1.1s ease;
+}
+.intro__inner {
+  max-width: 38rem;
+  transform: translateY(-4vh);
+  /* halo suave detrás del texto: legible sin apagar el resto del jardín */
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2.5rem) clamp(2rem, 5vw, 3.5rem);
+  background: radial-gradient(58% 62% at 50% 46%,
+    rgba(1, 1, 19, 0.52) 0%,
+    rgba(1, 1, 19, 0.36) 48%,
+    rgba(1, 1, 19, 0.13) 76%,
+    rgba(1, 1, 19, 0) 100%);
+}
+.intro.is-leaving {
+  opacity: 0;
+  transform: scale(1.07);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.intro__title {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2.15rem, 1.3rem + 4.2vw, 4.1rem);
+  line-height: 1.12;
+  margin: 0;
+  color: #fff8e3;
+  text-shadow:
+    0 0 28px rgba(255, 217, 90, 0.34),
+    0 0 70px rgba(255, 190, 60, 0.18),
+    0 2px 22px rgba(0, 0, 0, 0.6);
+}
+.intro__date {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: clamp(0.76rem, 0.7rem + 0.32vw, 0.9rem);
+  letter-spacing: 0.32em;
+  text-indent: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 224, 120, 0.92);
+  text-shadow: 0 0 14px rgba(1, 1, 19, 0.95), 0 1px 10px rgba(1, 1, 19, 0.9);
+}
+.intro__rule {
+  width: 0;
+  height: 1px;
+  margin: 1.6rem auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 217, 90, 0.4), transparent);
+  animation: rule-open 1.8s 1.1s var(--ease) forwards;
+}
+@keyframes rule-open { to { width: 8rem; } }
+
+.intro__hint {
+  margin: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1rem + 0.7vw, 1.45rem);
+  color: rgba(245, 240, 228, 0.86);
+  text-shadow: 0 0 16px rgba(1, 1, 19, 0.95), 0 1px 12px rgba(1, 1, 19, 0.85);
+}
+
+.intro__cta { margin-top: 2.6rem; }
+
+.btn-open {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  padding: 0.95em 2.1em;
+  min-height: 52px;
+  border: 1px solid rgba(255, 217, 90, 0.42);
+  border-radius: 100px;
+  background: rgba(255, 217, 90, 0.06);
+  color: #fff6dc;
+  font-family: var(--serif);
+  font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.08rem);
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.45s var(--ease), border-color 0.45s ease,
+              background 0.45s ease, box-shadow 0.45s ease;
+  animation: btn-breathe 4.5s ease-in-out infinite;
+}
+/* brillo que cruza el botón de vez en cuando */
+.btn-open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 240, 190, 0.22) 50%, transparent 62%);
+  transform: translateX(-120%);
+  animation: btn-sheen 6s 2.5s ease-in-out infinite;
+}
+.btn-open:hover,
+.btn-open:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(255, 217, 90, 0.75);
+  background: rgba(255, 217, 90, 0.12);
+  box-shadow: 0 0 34px rgba(255, 217, 90, 0.2), 0 14px 46px rgba(0, 0, 0, 0.5);
+}
+.btn-open:active { transform: translateY(0) scale(0.99); }
+
+@keyframes btn-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 217, 90, 0.26), 0 10px 40px rgba(0, 0, 0, 0.45); }
+  50%      { box-shadow: 0 0 0 10px rgba(255, 217, 90, 0), 0 10px 40px rgba(0, 0, 0, 0.45); }
+}
+@keyframes btn-sheen {
+  0%, 62%   { transform: translateX(-120%); }
+  86%, 100% { transform: translateX(120%); }
+}
+
+.fade-up { opacity: 0; transform: translateY(16px); animation: fade-up 1.4s var(--ease) forwards; }
+@keyframes fade-up { to { opacity: 1; transform: none; } }
+
+/* ==========================================================================
+   3. LAS LÍNEAS DE LA CARTA
+   Los mismos estilos sirven para la máquina de escribir y la carta completa.
+   ========================================================================== */
+.ln {
+  margin: 0 0 1.1em;
+  font-size: clamp(1.02rem, 0.98rem + 0.34vw, 1.16rem);
+  line-height: 1.92;
+  color: rgba(245, 240, 228, 0.93);
+  text-wrap: pretty;
+}
+.ln:last-child { margin-bottom: 0; }
+
+/* líneas que van en bloque, una detrás de otra */
+.ln.run { margin-bottom: 0.3em; }
+
+/* "mi brujita," */
+.ln.open {
+  font-family: var(--display);
+  font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.4rem);
+  line-height: 1.3;
+  color: #fff6dc;
+  margin-bottom: 1em;
+  text-shadow: 0 0 26px rgba(255, 217, 90, 0.2);
+}
+
+/* lo que él piensa, entre comillas o en voz baja */
+.ln.quote {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.14rem, 1.05rem + 0.6vw, 1.42rem);
+  line-height: 1.6;
+  color: #ffeab4;
+  padding-left: 1.05em;
+  border-left: 1px solid rgba(255, 217, 90, 0.3);
+  margin: 0.4em 0 1.2em;
+}
+
+/* los golpes: las frases cortas que pesan */
+.ln.beat {
+  font-family: var(--display);
+  font-size: clamp(1.32rem, 1.15rem + 0.95vw, 1.8rem);
+  line-height: 1.42;
+  color: #fff3cf;
+  margin-bottom: 1.1em;
+  text-shadow: 0 0 30px rgba(255, 217, 90, 0.22);
+}
+.ln.beat.run { margin-bottom: 0.2em; }
+
+/* el cierre: "te amo mi niña 💛" */
+.ln.love {
+  font-family: var(--hand);
+  font-size: clamp(1.9rem, 1.5rem + 1.9vw, 2.8rem);
+  line-height: 1.22;
+  color: #ffeaa8;
+  margin-bottom: 0.9em;
+  text-shadow: 0 0 34px rgba(255, 217, 90, 0.3);
+}
+.ln.love.run { margin-bottom: 0.1em; }
+
+.ln.forever {
+  font-size: 0.82rem;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  color: rgba(255, 217, 90, 0.66);
+  margin-top: 1.4em;
+}
+
+/* la risa */
+.risa {
+  font-family: var(--mono);
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+  color: rgba(255, 217, 90, 0.72);
+  white-space: nowrap;
+}
+.risa.is-pop {
+  display: inline-block;
+  animation: risa-pop 0.62s var(--ease);
+}
+@keyframes risa-pop {
+  0%   { transform: none; }
+  28%  { transform: rotate(-5deg) scale(1.12); }
+  58%  { transform: rotate(3deg)  scale(1.04); }
+  100% { transform: none; }
+}
+
+/* ==========================================================================
+   4. MODO 1 — la carta escribiéndose
+   ========================================================================== */
+.reader {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.reader.is-live { opacity: 1; }
+.reader.is-leaving { opacity: 0; transition-duration: 1.4s; }
+
+/* penumbra suave detrás de la lectura: el texto se lee sin apagar las flores
+   (sin bordes duros: se desvanece arriba y abajo) */
+.reader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgba(1, 1, 19, 0.00) 0%,
+    rgba(1, 1, 19, 0.52) 13%,
+    rgba(1, 1, 19, 0.66) 38%,
+    rgba(1, 1, 19, 0.62) 76%,
+    rgba(1, 1, 19, 0.00) 100%);
+}
+
+.reader__stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: clamp(3rem, 9vh, 5.5rem) var(--gutter) clamp(2rem, 14vh, 8rem);
+}
+
+.reader__view {
+  position: relative;
+  width: 100%;
+  max-width: var(--measure);
+  overflow: hidden;
+  /* las líneas viejas se desvanecen hacia arriba en vez de desaparecer */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 12%, #000 30%, #000 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 12%, #000 30%, #000 100%);
+}
+
+.reader__flow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: transform;
+}
+
+/* sobre las flores encendidas el texto necesita un poco de sombra */
+.reader__flow .ln {
+  text-shadow: 0 1px 14px rgba(1, 1, 19, 0.9), 0 0 30px rgba(1, 1, 19, 0.7);
+}
+/* dentro del flujo los separadores y el contador van más apretados */
+.reader__flow .divider { margin: clamp(1rem, 2.6vh, 1.6rem) 0; }
+.reader__flow .counter { margin: clamp(1.2rem, 3vh, 1.8rem) auto; }
+.reader__flow .stamp   { margin: clamp(1.2rem, 3vh, 1.8rem) 0; }
+
+/* el cursor que va escribiendo */
+.reader__flow .ln.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 0.46em;
+  height: 1em;
+  margin-left: 0.09em;
+  vertical-align: -0.14em;
+  border-radius: 1px;
+  background: linear-gradient(to bottom, #ffeaa8, #ffc93c);
+  box-shadow: 0 0 12px rgba(255, 217, 90, 0.65);
+  animation: caret 1.05s steps(1, end) infinite;
+}
+@keyframes caret { 0%, 52% { opacity: 1; } 53%, 100% { opacity: 0; } }
+
+/* "césar está escribiendo..." */
+.typing-note {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  color: var(--ink-faint);
+  transition: opacity 0.7s ease;
+}
+.typing-note.is-gone { opacity: 0; }
+.typing-note i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: dotty 1.35s ease-in-out infinite;
+}
+.typing-note i:nth-of-type(2) { animation-delay: 0.18s; }
+.typing-note i:nth-of-type(3) { animation-delay: 0.36s; }
+@keyframes dotty {
+  0%, 62%, 100% { opacity: 0.22; transform: translateY(0); }
+  32%           { opacity: 1;    transform: translateY(-3px); }
+}
+
+/* barra de abajo */
+.reader__bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.4rem var(--gutter) calc(1.1rem + env(safe-area-inset-bottom));
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.reader__bar.is-live { opacity: 1; }
+
+.chip {
+  border: 1px solid var(--hair-soft);
+  border-radius: 100px;
+  background: rgba(9, 12, 32, 0.5);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  color: var(--ink-faint);
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 0.72em 1.15em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+.chip:hover,
+.chip:focus-visible {
+  color: #fff6dc;
+  border-color: rgba(255, 217, 90, 0.45);
+  background: rgba(20, 18, 40, 0.6);
+}
+.chip[aria-pressed="true"] { color: var(--gold); border-color: rgba(255, 217, 90, 0.45); }
+
+.reader__tap {
+  position: absolute;
+  left: 50%;
+  bottom: calc(4.6rem + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 228, 0.3);
+  pointer-events: none;
+  transition: opacity 0.9s ease;
+}
+.reader__tap.is-gone { opacity: 0; }
+
+/* el contador y el sello, cuando aparecen dentro del flujo */
+.reader__flow .counter,
+.reader__flow .stamp,
+.reader__flow .divider {
+  opacity: 0;
+  animation: soft-in 1.1s var(--ease) forwards;
+}
+@keyframes soft-in { to { opacity: 1; } }
+
+/* ==========================================================================
+   5. MODO 2 — la carta completa (con scroll)
+   ========================================================================== */
+.letter {
+  position: relative;
+  z-index: 3;
+  padding: 0 var(--gutter);
+}
+.letter:focus { outline: none; }
+
+.letter__inner {
+  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(4.5rem, 14vh, 8rem) 0 clamp(2rem, 6vh, 4rem);
+}
+
+.chapter {
+  position: relative;
+  padding: clamp(1.5rem, 1rem + 2.6vw, 2.5rem) clamp(1.25rem, 0.8rem + 2.4vw, 2.3rem);
+  border-radius: 20px;
+  border: 1px solid var(--hair-soft);
+  background: var(--glass);
+  backdrop-filter: blur(11px) saturate(125%);
+  -webkit-backdrop-filter: blur(11px) saturate(125%);
+  box-shadow:
+    0 24px 60px -30px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  transition: border-color 0.7s ease, box-shadow 0.7s ease;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .chapter { background: var(--glass-deep); }
+}
+.chapter:hover {
+  border-color: var(--hair);
+  box-shadow:
+    0 26px 64px -28px rgba(0, 0, 0, 0.85),
+    0 0 40px -18px rgba(255, 217, 90, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* --- separadores --------------------------------------------------------- */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: clamp(2.2rem, 6vh, 3.4rem) 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  max-width: 6.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 217, 90, 0.26), transparent);
+}
+.divider span {
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(255, 217, 90, 0.4));
+  animation: mark-float 7s ease-in-out infinite;
+}
+@keyframes mark-float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-5px) rotate(3deg); }
+}
+
+/* --- contador ------------------------------------------------------------ */
+.counter {
+  margin: clamp(2.2rem, 6vh, 3.2rem) auto;
+  padding: 1.5rem 1.4rem;
+  max-width: 27rem;
+  text-align: center;
+  border-top: 1px solid var(--hair-soft);
+  border-bottom: 1px solid var(--hair-soft);
+}
+.counter__label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 217, 90, 0.66);
+}
+.counter__value {
+  margin: 0.75rem 0 0;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 1.15rem + 1.05vw, 1.95rem);
+  line-height: 1.35;
+  color: #fff4d4;
+  text-shadow: 0 0 30px rgba(255, 217, 90, 0.22);
+}
+.counter__note {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+.counter__since {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  color: rgba(255, 217, 90, 0.45);
+}
+
+/* --- sello de la fecha --------------------------------------------------- */
+.stamp {
+  margin: clamp(2.4rem, 7vh, 3.6rem) 0;
+  text-align: center;
+}
+.stamp__pre {
+  display: block;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-faint);
+}
+.stamp__date {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+  color: rgba(255, 217, 90, 0.72);
+  text-shadow: 0 0 22px rgba(255, 217, 90, 0.28);
+}
+
+/* --- pista de scroll ----------------------------------------------------- */
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 clamp(1.5rem, 5vh, 2.6rem);
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  transition: opacity 0.8s ease;
+}
+.scroll-hint i {
+  display: block;
+  width: 1px;
+  height: 2.6rem;
+  background: linear-gradient(to bottom, rgba(255, 217, 90, 0.5), transparent);
+  transform-origin: top;
+  animation: hint-slide 2.8s ease-in-out infinite;
+}
+.scroll-hint.is-gone { opacity: 0; }
+@keyframes hint-slide {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.35; }
+  50%      { transform: scaleY(1);   opacity: 1; }
+}
+
+/* --- aparición con el scroll --------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1s var(--ease) var(--rd, 0s),
+    transform 1s var(--ease) var(--rd, 0s);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* ==========================================================================
+   6. PANTALLA FINAL
+   ========================================================================== */
+.finale {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(5rem, 14vh, 8rem) var(--gutter)
+           calc(clamp(4rem, 10vh, 6rem) + env(safe-area-inset-bottom));
+}
+/* durante la máquina de escribir vive como pantalla completa */
+.finale.is-stage {
+  position: fixed;
+  inset: 0;
+  padding: var(--gutter);
+}
+
+/* penumbra suave: las últimas frases caen justo sobre las flores */
+.finale::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(70% 46% at 50% 46%,
+    rgba(1, 1, 19, 0.74) 0%,
+    rgba(1, 1, 19, 0.5) 46%,
+    rgba(1, 1, 19, 0) 78%);
+}
+.finale__soft,
+.finale__hug,
+.finale__owe,
+.finale__forever {
+  text-shadow: 0 1px 16px rgba(1, 1, 19, 0.92), 0 0 34px rgba(1, 1, 19, 0.75);
+}
+.finale__hug {
+  text-shadow: 0 0 44px rgba(255, 217, 90, 0.4), 0 0 110px rgba(255, 190, 60, 0.18),
+               0 1px 18px rgba(1, 1, 19, 0.9);
+}
+
+.finale > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.3s ease, transform 1.3s var(--ease);
+}
+.finale.is-in > * { opacity: 1; transform: none; }
+.finale.is-in > *:nth-child(1) { transition-delay: 0.2s; }
+.finale.is-in > *:nth-child(2) { transition-delay: 1.6s; }
+.finale.is-in > *:nth-child(3) { transition-delay: 3.0s; }
+.finale.is-in > *:nth-child(4) { transition-delay: 5.6s; }
+.finale.is-in > *:nth-child(5) { transition-delay: 6.8s; }
+
+.finale__soft {
+  margin: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.05rem + 0.7vw, 1.5rem);
+  color: var(--ink-soft);
+}
+.finale__hug {
+  margin: 0;
+  font-family: var(--hand);
+  font-size: clamp(3rem, 2.2rem + 4.2vw, 5.4rem);
+  line-height: 1.05;
+  color: #fff3cf;
+}
+.finale__owe {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 1.15rem + 1vw, 1.95rem);
+  color: #ffeab4;
+}
+.finale__forever {
+  margin: 0;
+  font-size: clamp(0.82rem, 0.78rem + 0.2vw, 0.95rem);
+  letter-spacing: 0.36em;
+  text-indent: 0.36em;
+  color: rgba(255, 217, 90, 0.7);
+}
+.finale__forever b {
+  font-weight: 400;
+  font-size: 1.3em;
+  color: var(--gold);
+  text-shadow: 0 0 22px rgba(255, 217, 90, 0.55);
+}
+.finale__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+/* en la carta completa ya no tiene sentido "leer la carta completa" */
+html.mode-scroll #readAllBtn { display: none; }
+
+/* ==========================================================================
+   7. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 640px) {
+  :root { --measure: 100%; }
+  body { line-height: 1.85; }
+  .ln { line-height: 1.85; }
+  .chapter {
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .intro__inner { transform: translateY(-2vh); }
+  .btn-open { width: 100%; }
+  .bubbles { opacity: 0.32; }
+  html.is-open .scene { transform: scale(0.97); }
+  .reader__stage { padding-bottom: clamp(1.5rem, 10vh, 5rem); }
+}
+
+@media (min-width: 1100px) { :root { --measure: 36rem; } }
+@media (min-width: 900px) and (min-height: 900px) { .letter__inner { padding-top: 13vh; } }
+
+/* pantallas bajas: la carta necesita el alto, las flores ceden */
+@media (max-height: 620px) {
+  .reader__stage { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .reader__tap { display: none; }
+}
+
+/* ==========================================================================
+   8. prefers-reduced-motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  /* la escena aparece ya florecida, sin movimiento continuo */
+  .scene *,
+  .scene *::before,
+  .scene *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .bubbles { display: none; }
+  .flower__light { opacity: 0; }
+  .fx, .bloom { display: none; }
+
+  .reveal,
+  .fade-up,
+  .finale > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .btn-open,
+  .btn-open::after,
+  .divider span,
+  .scroll-hint i,
+  .risa,
+  .intro__rule { animation: none !important; }
+  .intro__rule { width: 8rem; }
+  .scene, .veil, .intro, .letter, .reader { transition: none !important; }
+}
+</style>
+
+<noscript>
+  <style>
+    /* sin JavaScript no hay máquina de escribir, pero la carta igual se lee
+       y las flores igual florecen */
+    .container * { animation-play-state: running !important; }
+    .intro { position: relative; min-height: 100vh; }
+    .btn-open { display: none; }
+    .veil { opacity: 0.85; }
+    .reader[hidden] { display: none !important; }
+    .letter[hidden] { display: block !important; }
+    .finale[hidden] { display: flex !important; }
+    .reveal, .finale > * { opacity: 1 !important; transform: none !important; }
+    .scroll-hint, .finale__actions { display: none; }
+  </style>
+</noscript>
+
+<script>
+  /* el scroll queda quieto: la carta se lee sola hasta el final */
+  document.documentElement.className += " is-locked";
+</script>
+</head>
+
+<body>
+
+<!-- ========================================================================
+     ESCENA: la noche, las flores amarillas y los corazones.
+     Queda fija detrás de todo. (decorativa: aria-hidden)
+     ======================================================================== -->
+<div class="scene container" id="scene" aria-hidden="true">
+  <div class="night"></div>
+  <div class="flowers">
+    <div class="flower flower--1">
+      <div class="flower__leafs flower__leafs--1">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+        <div class="flower__line__leaf flower__line__leaf--5"></div>
+        <div class="flower__line__leaf flower__line__leaf--6"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--2">
+      <div class="flower__leafs flower__leafs--2">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--3">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+    <div class="flower flower--4">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:1.2s">
+      <div class="flower__g-long">
+        <div class="flower__g-long__top"></div>
+        <div class="flower__g-long__bottom"></div>
+      </div>
+    </div>
+
+    <div class="growing-grass">
+      <div class="flower__grass flower__grass--1">
+        <div class="flower__grass--top"></div>
+        <div class="flower__grass--bottom"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+        <div class="flower__grass__overlay"></div>
+      </div>
+    </div>
+
+    <div class="growing-grass">
+      <div class="flower__grass flower__grass--2">
+        <div class="flower__grass--top"></div>
+        <div class="flower__grass--bottom"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+        <div class="flower__grass__overlay"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:2.4s">
+      <div class="flower__g-right flower__g-right--1">
+        <div class="leaf"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:2.8s">
+      <div class="flower__g-right flower__g-right--2">
+        <div class="leaf"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:2.8s">
+      <div class="flower__g-front">
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__line"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:3.2s">
+      <div class="flower__g-fr">
+        <div class="leaf"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--0">
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:2.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.4s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--1">
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.8s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--2">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.4s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--3">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--4">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--5">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--6">
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.4s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.6s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.8s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--7">
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.5s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- corazones flotando (20: el CSS los posiciona uno a uno) -->
+  <div class="bubbles">
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+    <div class="bubble"><svg class="heart" viewBox="0 0 32 32"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg></div>
+  </div>
+</div>
+
+<!-- velo que hace legible el texto sin apagar las flores -->
+<div class="veil" aria-hidden="true"></div>
+<div class="bloom" id="bloom" aria-hidden="true"></div>
+
+<!-- partículas, pétalos y corazones -->
+<canvas class="fx" id="fx" aria-hidden="true"></canvas>
+
+<!-- progreso -->
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+
+<!-- ========================================================================
+     PORTADA
+     ======================================================================== -->
+<section class="intro" id="intro">
+  <div class="intro__inner">
+    <h1 class="intro__title fade-up" style="animation-delay:.35s">para mi Kari&nbsp;💛</h1>
+    <span class="intro__date fade-up" style="animation-delay:1s">21 de septiembre de 2026</span>
+    <div class="intro__rule" aria-hidden="true"></div>
+    <p class="intro__hint fade-up" style="animation-delay:1.6s">hay algo que quiero decirte...</p>
+    <div class="intro__cta fade-up" style="animation-delay:2.2s">
+      <button class="btn-open" id="openBtn" type="button">abrir mi carta 🌼</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     MODO 1 — la carta escribiéndose sola
+     ======================================================================== -->
+<section class="reader" id="reader" hidden>
+  <div class="reader__stage">
+    <div class="reader__view" id="readerView">
+      <div class="reader__flow" id="readerFlow"></div>
+    </div>
+  </div>
+  <p class="reader__tap" id="tapHint">toca para ir más rápido</p>
+  <div class="reader__bar" id="readerBar">
+    <button class="chip" id="pauseBtn" type="button" aria-pressed="false">pausa</button>
+    <button class="chip" id="speedBtn" type="button">más rápido</button>
+    <button class="chip" id="skipBtn" type="button">saltar al final</button>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     MODO 2 — la carta completa. También es la fuente del texto que se escribe.
+     ======================================================================== -->
+<main class="letter" id="letter" hidden>
+  <div class="letter__inner">
+
+    <div class="scroll-hint reveal" id="scrollHint">
+      <span>baja despacio</span>
+      <i aria-hidden="true"></i>
+    </div>
+
+    <article class="chapter reveal" data-block="1">
+      <p class="ln open">mi brujita,</p>
+      <p class="ln">nose ni como empezar esto la verdad</p>
+      <p class="ln">llevo un rato pensando que decirte y entre mas pienso mas cosas me salen y despues termino diciendo que no se como explicarte nada <span class="risa">KASJDALSKD</span></p>
+      <p class="ln">pero bueno</p>
+      <p class="ln">voy a empezar por lo facil</p>
+      <p class="ln beat" data-fx="petals" data-hold="900">feliz dia de las flores amarillas mi amor 🌼💛</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="2">
+      <p class="ln">aunque siento que decirte solamente eso es demasiado poquito para todo lo que quiero decirte</p>
+      <p class="ln">porque si</p>
+      <p class="ln">hoy son flores amarillas</p>
+      <p class="ln">pero yo no queria simplemente darte unas flores y ya</p>
+      <p class="ln">queria hacerte algo que fuera solamente para ti</p>
+      <p class="ln">algo que pudieras leer y que supieras que me sente a pensar en ti de verdad</p>
+      <p class="ln">en nosotros</p>
+      <p class="ln">en todo este tiempo</p>
+      <p class="ln">en todo lo que hemos pasado desde aquel 28 de marzo de 2025</p>
+      <p class="ln">y en todas las cosas que todavia quiero vivir contigo</p>
+      <p class="ln">y es raro pensar en esa fecha porque siento que fue hace nada y al mismo tiempo cuando me pongo a pensar en todo lo que ha pasado digo</p>
+      <p class="ln beat">marica</p>
+      <p class="ln" data-hold="500">si ha pasado bastante</p>
+    </article>
+
+    <aside class="counter reveal" data-beat="counter">
+      <span class="counter__label">llevamos juntos...</span>
+      <p class="counter__value" id="together">1 año, 5 meses y 24 días</p>
+      <span class="counter__note">y todavia siento que nos falta muchisimo por vivir</span>
+      <span class="counter__since">28.03.2025</span>
+    </aside>
+
+    <article class="chapter reveal" data-block="3">
+      <p class="ln">hemos cambiado</p>
+      <p class="ln">hemos aprendido</p>
+      <p class="ln">hemos tenido momentos demasiado lindos</p>
+      <p class="ln">tambien momentos que no han sido tan faciles</p>
+      <p class="ln">hemos tenido que entendernos</p>
+      <p class="ln">aprender cosas del otro</p>
+      <p class="ln">y creo que eso tambien hace parte de querer a alguien de verdad</p>
+      <p class="ln">porque no todo puede ser bonito todo el tiempo</p>
+      <p class="ln">no todo puede salir exactamente como uno quiere</p>
+      <p class="ln">y yo tampoco he sabido hacer todo perfecto contigo</p>
+      <p class="ln">he tenido mis errores</p>
+      <p class="ln">he tenido momentos donde no supe que decir</p>
+      <p class="ln">momentos donde probablemente pude hacer mejor las cosas</p>
+      <p class="ln">pero hay algo que nunca he dudado</p>
+      <p class="ln beat" data-fx="love">y es que te amo</p>
+      <p class="ln beat" data-fx="love" data-hold="800">te amo muchisimo</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="4">
+      <p class="ln">y nose si alguna vez voy a encontrar una forma de explicarte exactamente cuanto</p>
+      <p class="ln">porque hay veces donde siento que decirte te amo se queda corto</p>
+      <p class="ln">como que son solamente dos palabras para una cantidad absurda de cosas</p>
+      <p class="ln run" data-fx="love">te amo cuando te extraño</p>
+      <p class="ln run">te amo cuando te veo</p>
+      <p class="ln run">te amo cuando te abrazo</p>
+      <p class="ln run">te amo cuando me haces reir</p>
+      <p class="ln run">te amo cuando estamos hablando de cualquier bobada</p>
+      <p class="ln run">te amo cuando me cuentas cosas</p>
+      <p class="ln run">te amo cuando simplemente estamos juntos y no estamos haciendo nada especial</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="5">
+      <p class="ln">y creo que esa es una de las cosas que mas me gustan de nosotros</p>
+      <p class="ln">que muchas veces no necesitamos hacer algo increible</p>
+      <p class="ln">a veces solamente me gusta estar contigo</p>
+      <p class="ln run">asi</p>
+      <p class="ln run">sin mas</p>
+      <p class="ln run">estar contigo</p>
+      <p class="ln run">hablar contigo</p>
+      <p class="ln run">molestarte</p>
+      <p class="ln run">escucharte</p>
+      <p class="ln run">reirme contigo</p>
+      <p class="ln run">quedarme contigo</p>
+      <p class="ln run">y ya</p>
+      <p class="ln">y para mi eso vale muchisimo</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="6">
+      <p class="ln">porque con el tiempo me he dado cuenta de que el amor no solamente esta en las cosas grandes</p>
+      <p class="ln">esta en las bobaditas tambien</p>
+      <p class="ln">en una conversacion que se alarga sin darnos cuenta</p>
+      <p class="ln">en un abrazo</p>
+      <p class="ln">en una mirada</p>
+      <p class="ln">en algo que veo y pienso inmediatamente</p>
+      <p class="ln quote">esto se lo tengo que mandar a Kari</p>
+      <p class="ln risa-line" data-hold="600"><span class="risa">KASJDALSKD</span></p>
+      <p class="ln">y es que literal muchas veces me pasa eso</p>
+      <p class="ln">estoy haciendo cualquier cosa y de la nada algo me recuerda a ti</p>
+      <p class="ln">y listo</p>
+      <p class="ln">ya estas ahi otra vez</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="7">
+      <p class="ln">y creo que eso pasa porque ya eres parte de mi vida de una forma muy diferente</p>
+      <p class="ln">ya no eres solamente mi novia</p>
+      <p class="ln">eres esa persona a la que quiero contarle cosas</p>
+      <p class="ln">eres esa persona a la que quiero mostrarle algo apenas pasa</p>
+      <p class="ln">eres esa persona que aparece en mis pensamientos sin yo buscarlo</p>
+      <p class="ln">y nose</p>
+      <p class="ln">me gusta que seas tu</p>
+      <p class="ln">me gusta demasiado que seas tu</p>
+      <p class="ln beat run">mi niña</p>
+      <p class="ln beat run">mi princesa</p>
+      <p class="ln beat run">mi brujita</p>
+      <p class="ln beat" data-hold="800">el amor de mi vida</p>
+      <p class="ln">si</p>
+      <p class="ln">lo dije</p>
+      <p class="ln">aunque suene cursi me vale verga <span class="risa">KASJDALSKD</span></p>
+      <p class="ln">porque es verdad</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="8">
+      <p class="ln">y hoy queria aprovechar este dia para recordartelo</p>
+      <p class="ln">no porque necesites que te lo recuerde</p>
+      <p class="ln">sino porque nunca esta de mas decirle a alguien que amas cuanto la amas</p>
+      <p class="ln">y yo quiero que tu lo sepas</p>
+      <p class="ln">quiero que sepas que me haces feliz</p>
+      <p class="ln">que me gusta tenerte en mi vida</p>
+      <p class="ln">que me gusta poder decir que eres mi novia</p>
+      <p class="ln">que me gusta saber que tengo una persona con la que puedo compartir todas esas pequeñas cosas que me pasan</p>
+      <p class="ln">y tambien quiero que sepas que no solamente quiero los momentos grandes contigo</p>
+      <p class="ln">quiero los normales tambien</p>
+      <p class="ln">quiero los dias donde no hacemos nada espectacular</p>
+      <p class="ln">quiero las conversaciones que empiezan por cualquier bobada y terminan durando demasiado</p>
+      <p class="ln">quiero seguir riendome contigo</p>
+      <p class="ln">quiero seguir molestandote</p>
+      <p class="ln">quiero seguir escuchando tus historias</p>
+      <p class="ln">quiero seguir contandote las mias</p>
+      <p class="ln">quiero seguir diciendote brujita</p>
+      <p class="ln">quiero seguir diciendote mi niña</p>
+      <p class="ln">quiero seguir diciendote mi princesa aunque aveces me de hasta pena de lo cursi que suena <span class="risa">KASJDALSKD</span></p>
+      <p class="ln">quiero seguir teniendo esos momentos donde simplemente estar contigo ya es suficiente</p>
+      <p class="ln">porque contigo muchas veces un momento normal deja de sentirse tan normal</p>
+      <p class="ln">y eso me gusta</p>
+      <p class="ln">me gusta muchisimo</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="9">
+      <p class="ln">desde el 28 de marzo de 2025 hemos pasado por muchas cosas</p>
+      <p class="ln">y creo que una de las cosas mas bonitas es pensar en como uno va conociendo a una persona con el tiempo</p>
+      <p class="ln">al principio conoces unas partes</p>
+      <p class="ln">despues otras</p>
+      <p class="ln">y despues empiezas a conocer cosas que nadie mas necesariamente ve</p>
+      <p class="ln run">sus formas de pensar</p>
+      <p class="ln run">sus costumbres</p>
+      <p class="ln run">las cosas que le dan risa</p>
+      <p class="ln run">las cosas que le molestan</p>
+      <p class="ln run">las cosas que le importan</p>
+      <p class="ln run">las cosas que la emocionan</p>
+      <p class="ln">y nose</p>
+      <p class="ln">siento que todavia me falta muchisimo por conocer de ti</p>
+      <p class="ln">y eso me gusta</p>
+      <p class="ln">porque significa que todavia tengo muchisimas cosas que descubrir de mi niña</p>
+      <p class="ln">todavia hay versiones tuyas que no conozco</p>
+      <p class="ln">y tambien hay versiones mias que tu no conoces todavia</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="10">
+      <p class="ln">y quiero que sigamos conociendonos</p>
+      <p class="ln">quiero seguir viendo como cambias</p>
+      <p class="ln run">como creces</p>
+      <p class="ln run">como van cambiando tus gustos</p>
+      <p class="ln run">tus ideas</p>
+      <p class="ln run">tus planes</p>
+      <p class="ln run">todo</p>
+      <p class="ln">quiero seguir estando ahi para muchas de esas cosas</p>
+      <p class="ln">y tambien quiero que tu estes para las mias</p>
+      <p class="ln">porque yo tampoco soy exactamente el mismo de aquel 28 de marzo</p>
+      <p class="ln">y creo que eso es bonito</p>
+      <p class="ln">que podamos crecer y aun asi seguir encontrando un lugar el uno en la vida del otro</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="11">
+      <p class="ln">y si</p>
+      <p class="ln">nosotros no somos perfectos</p>
+      <p class="ln">nunca lo hemos sido</p>
+      <p class="ln">hemos tenido momentos muy lindos</p>
+      <p class="ln">y otros que han costado mas</p>
+      <p class="ln">hemos tenido que aprender</p>
+      <p class="ln">hemos tenido que entendernos</p>
+      <p class="ln">hemos tenido que hablar</p>
+      <p class="ln">y creo que todo eso tambien hace parte de una relacion real</p>
+      <p class="ln">yo no quiero algo que se vea perfecto desde afuera</p>
+      <p class="ln">quiero algo que se sienta real cuando estamos nosotros dos</p>
+      <p class="ln">quiero poder quererte cuando todo esta bonito</p>
+      <p class="ln">pero tambien saber como estar contigo cuando las cosas no salen como queremos</p>
+      <p class="ln run">quiero seguir aprendiendo</p>
+      <p class="ln run">seguir mejorando</p>
+      <p class="ln run">seguir entendiendo</p>
+      <p class="ln" data-fx="love">porque te amo y porque me importas</p>
+      <p class="ln">y aunque yo tenga muchas cosas que mejorar todavia</p>
+      <p class="ln">hay algo que si quiero que nunca dudes</p>
+      <p class="ln">todo lo que siento por ti es real</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="12">
+      <p class="ln">y creo que una de las mejores cosas que me han pasado es poder llamarte mi novia</p>
+      <p class="ln run">porque entre tanta gente</p>
+      <p class="ln run">entre tantos dias</p>
+      <p class="ln run">entre tantas cosas</p>
+      <p class="ln beat run">eres tu</p>
+      <p class="ln beat" data-hold="800">mi Kari</p>
+      <p class="ln">y me hace feliz que seas tu</p>
+      <p class="ln">tambien me hace feliz pensar en todo lo que todavia nos falta</p>
+      <p class="ln">porque no quiero quedarme solamente con lo que ya vivimos</p>
+      <p class="ln beat run">quiero mas</p>
+      <p class="ln beat" data-hold="700">mucho mas</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="13">
+      <p class="ln run">quiero mas abrazos</p>
+      <p class="ln run">mas risas</p>
+      <p class="ln run">mas salidas</p>
+      <p class="ln run">mas conversaciones</p>
+      <p class="ln run">mas planes</p>
+      <p class="ln run">mas momentos improvisados</p>
+      <p class="ln run">mas dias normales</p>
+      <p class="ln run">mas dias locos</p>
+      <p class="ln run">mas veces diciendo</p>
+      <p class="ln quote">te acuerdas de esto?</p>
+      <p class="ln run">mas veces riendonos por alguna bobada que solamente nosotros entendemos</p>
+      <p class="ln run">mas momentos donde no este pasando nada especial y aun asi yo este pensando que que rico estar contigo</p>
+      <p class="ln">quiero mas de todo eso</p>
+      <p class="ln">quiero mas de ti</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="14">
+      <p class="ln">y creo que eso es lo que mas bonito me parece</p>
+      <p class="ln">que todavia hay demasiadas cosas que no hemos vivido</p>
+      <p class="ln">demasiadas cosas que todavia ni sabemos que van a pasar</p>
+      <p class="ln">y me gusta pensar que algun dia vamos a mirar hacia atras y vamos a decir</p>
+      <p class="ln quote" data-hold="800">marica si hemos vivido vainas <span class="risa">KASJDALSKD</span></p>
+      <p class="ln">y eso quiero</p>
+      <p class="ln">quiero recuerdos contigo</p>
+      <p class="ln">quiero historias contigo</p>
+      <p class="ln">quiero momentos que en el momento parezcan una bobada y despues se conviertan en algo que recordemos con una sonrisa</p>
+      <p class="ln">quiero eso</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="15">
+      <p class="ln">y tambien quiero decirte gracias</p>
+      <p class="ln run">gracias por cada momento bonito</p>
+      <p class="ln run">gracias por cada abrazo</p>
+      <p class="ln run">gracias por cada risa</p>
+      <p class="ln run">gracias por cada conversacion</p>
+      <p class="ln run">gracias por dejarme formar parte de tu vida</p>
+      <p class="ln run">gracias por todos los recuerdos que ya tenemos</p>
+      <p class="ln run">gracias por todas esas pequeñas cosas que probablemente tu haces sin pensar mucho y que yo termino guardando</p>
+      <p class="ln run">gracias por ser tu</p>
+      <p class="ln run">y gracias por ser mi niña</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="16">
+      <p class="ln" data-fx="petals">porque si algo quiero que entiendas hoy es que estas flores no son solamente flores amarillas</p>
+      <p class="ln">son una excusa bonita para recordarte todo esto</p>
+      <p class="ln" data-fx="love">una excusa para decirte que te amo</p>
+      <p class="ln">una excusa para hacer algo por ti</p>
+      <p class="ln">una excusa para que cuando veas estas flores recuerdes que un dia hice toda esta vaina pensando en ti</p>
+      <p class="ln">en ti</p>
+      <p class="ln">solamente en ti</p>
+      <p class="ln">y creo que eso es lo que mas queria hacer hoy</p>
+      <p class="ln">que sintieras que esto era tuyo</p>
+      <p class="ln">que estas palabras eran para ti</p>
+      <p class="ln">que cada parte de esto fue hecha pensando en mi brujita</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="17">
+      <p class="ln">y la verdad creo que podria seguir escribiendo demasiado</p>
+      <p class="ln run">porque siempre me sale otra cosa</p>
+      <p class="ln run">otra bobada</p>
+      <p class="ln run">otro recuerdo</p>
+      <p class="ln run">otra razon</p>
+      <p class="ln run">otra frase</p>
+      <p class="ln">y cuando se trata de ti parece que nunca termino</p>
+      <p class="ln">porque siempre siento que falta algo</p>
+      <p class="ln">que todavia falta decirte algo</p>
+      <p class="ln">que todavia falta explicarte algo</p>
+      <p class="ln">y capaz no existe una forma de decirlo perfecto</p>
+      <p class="ln">pero tampoco quiero hacerlo perfecto</p>
+      <p class="ln">quiero hacerlo yo</p>
+      <p class="ln run">con mis palabras</p>
+      <p class="ln run">con mis errores</p>
+      <p class="ln run">con mis "nose"</p>
+      <p class="ln run">con mis "pq"</p>
+      <p class="ln run">con mis vueltas</p>
+      <p class="ln run">con mis bobadas</p>
+      <p class="ln run">con todo</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="18">
+      <p class="ln">porque eres tu la que lo va a leer</p>
+      <p class="ln">y quiero que cuando lo leas sepas que fui yo</p>
+      <p class="ln">que no estoy intentando sonar como escritor ni nada de eso</p>
+      <p class="ln">simplemente estoy intentando decirle a mi novia que la amo</p>
+      <p class="ln">y ya</p>
+      <p class="ln">eso es todo</p>
+      <p class="ln">aunque sea muchisimo</p>
+      <p class="ln" data-fx="love">porque te amo demasiado</p>
+      <p class="ln">y porque eres una persona demasiado importante para mi</p>
+      <p class="ln">y no quiero que nunca se te olvide</p>
+      <p class="ln run">quiero que sepas que pienso en ti</p>
+      <p class="ln run">que te extraño cuando no estas</p>
+      <p class="ln run">que me gusta verte</p>
+      <p class="ln run">que me encanta abrazarte</p>
+      <p class="ln run">que me encanta tenerte cerca</p>
+      <p class="ln run">que me gusta poder decirte mi princesa</p>
+      <p class="ln run">que me gusta poder decirte mi brujita</p>
+      <p class="ln run">que me gusta poder decirte mi niña</p>
+      <p class="ln">y que me encanta poder decir</p>
+      <p class="ln beat">el amor de mi vida</p>
+      <p class="ln">aunque me de pena admitir que soy asi de cursi <span class="risa">KASJDALSKD</span></p>
+      <p class="ln">pero si</p>
+      <p class="ln">eres tu</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="19">
+      <p class="ln">y si algun dia vuelves a leer esto despues de mucho tiempo quiero que recuerdes algo</p>
+      <p class="ln run">no solamente las flores</p>
+      <p class="ln run">no solamente la fecha</p>
+      <p class="ln run">no solamente la carta</p>
+      <p class="ln">quiero que recuerdes que hubo una noche en la que me sente a pensar en ti</p>
+      <p class="ln">en nosotros</p>
+      <p class="ln">en todo lo que hemos vivido</p>
+      <p class="ln">y en todo lo que todavia quiero vivir contigo</p>
+      <p class="ln">y que intente meter todo eso en palabras aunque claramente no me alcanzaran</p>
+    </article>
+
+    <div class="stamp reveal" data-beat="stamp">
+      <span class="stamp__pre">desde entonces...</span>
+      <span class="stamp__date">28.03.2025</span>
+    </div>
+
+    <article class="chapter reveal" data-block="20">
+      <p class="ln">y si algo quiero que te quede de todo esto es facil</p>
+      <p class="ln beat" data-fx="love" data-hold="900">te amo</p>
+      <p class="ln beat run">te amo mi niña</p>
+      <p class="ln beat run">te amo mi princesa</p>
+      <p class="ln beat run">te amo mi brujita</p>
+      <p class="ln beat run">te amo mi amor</p>
+      <p class="ln beat run">te amo el amor de mi vida</p>
+      <p class="ln beat" data-fx="love" data-hold="900">y te amo muchisimo</p>
+      <p class="ln">no solamente hoy</p>
+      <p class="ln run">no solamente por las flores</p>
+      <p class="ln run">sino por todo lo que eres</p>
+      <p class="ln run">por todo lo que hemos vivido</p>
+      <p class="ln run">por todo lo que seguimos aprendiendo</p>
+      <p class="ln run">y por todo lo que todavia falta</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>💛</span></div>
+
+    <article class="chapter reveal" data-block="21">
+      <p class="ln">no se que va a pasar dentro de muchos años</p>
+      <p class="ln run">nose donde vamos a estar</p>
+      <p class="ln run">nose que cosas van a cambiar</p>
+      <p class="ln">pero hoy</p>
+      <p class="ln">ahora mismo</p>
+      <p class="ln">yo quiero seguir contigo</p>
+      <p class="ln">quiero seguir viviendo cosas contigo</p>
+      <p class="ln">quiero seguir haciendo recuerdos</p>
+      <p class="ln">quiero seguir conociendote</p>
+      <p class="ln">quiero seguir queriendote</p>
+      <p class="ln">quiero seguir siendo esa persona que te molesta y te dice brujita por cualquier bobada <span class="risa">KASJDALSKD</span></p>
+      <p class="ln">quiero seguir siendo esa persona que piensa</p>
+      <p class="ln quote">esto se lo tengo que contar a Kari</p>
+      <p class="ln run">quiero seguir teniendo mis momentos contigo</p>
+      <p class="ln run">quiero seguir teniendo mis abrazos contigo</p>
+      <p class="ln run">quiero seguir teniendo mis dias contigo</p>
+      <p class="ln run">quiero seguir sumando recuerdos contigo</p>
+      <p class="ln" data-fx="love">y quiero seguir diciendote que te amo</p>
+    </article>
+
+    <div class="divider reveal" aria-hidden="true"><span>🌼</span></div>
+
+    <article class="chapter reveal" data-block="22">
+      <p class="ln beat" data-fx="petals" data-hold="900">asi que feliz dia de las flores amarillas mi amor 🌼💛</p>
+      <p class="ln run">feliz dia a mi niña</p>
+      <p class="ln run">a mi princesa</p>
+      <p class="ln run">a mi brujita</p>
+      <p class="ln run">al amor de mi vida</p>
+      <p class="ln run">gracias por estar</p>
+      <p class="ln run">gracias por ser tu</p>
+      <p class="ln run">gracias por dejarme quererte</p>
+      <p class="ln">gracias por todos los momentos que hemos compartido desde aquel 28 de marzo de 2025</p>
+      <p class="ln">y gracias tambien por todo lo que todavia nos falta</p>
+      <p class="ln">espero que cuando veas estas flores sonrías</p>
+      <p class="ln">espero que cuando leas esto te rias un poquito</p>
+      <p class="ln">espero que en alguna parte pienses</p>
+      <p class="ln quote" data-hold="800">este marica si es demasiado cursi <span class="risa">KASJDALSKD</span></p>
+      <p class="ln">y espero que tambien recuerdes que todo esto lo hice porque te amo</p>
+      <p class="ln">muchisimo</p>
+      <p class="ln">mas de lo que a veces se explicar</p>
+      <p class="ln">y mas de lo que definitivamente me cabia en esta carta</p>
+      <p class="ln">pero bueno</p>
+      <p class="ln">algo tenia que intentar</p>
+      <p class="ln love run" data-fx="petals">te amo mi niña 💛</p>
+      <p class="ln love run">te amo mi brujita 🌼</p>
+      <p class="ln love run">te amo mi princesa</p>
+      <p class="ln love" data-hold="1200">te amo el amor de mi vida</p>
+      <p class="ln forever" data-hold="2200">28.03.2025 — ∞</p>
+    </article>
+
+  </div>
+</main>
+
+
+<!-- ========================================================================
+     PANTALLA FINAL
+     ======================================================================== -->
+<section class="finale" id="finale" hidden>
+  <p class="finale__soft">si llegaste hasta aquí...</p>
+  <p class="finale__hug">ven acá 🫂</p>
+  <p class="finale__owe">te debo un abrazo.</p>
+  <p class="finale__forever">28.03.2025 — <b>∞</b></p>
+  <div class="finale__actions">
+    <button class="chip" id="readAllBtn" type="button">leer la carta completa 🌼</button>
+    <button class="chip" id="replayBtn" type="button">verla escribirse otra vez ↺</button>
+  </div>
+</section>
+
+<script>
+/* ==========================================================================
+   para mi Kari 💛  —  21.09.2026
+   Sin audio, sin imágenes, sin dependencias externas.
+   Funciona abriendo el archivo directamente en el navegador.
+
+   Modo 1: la carta se escribe sola (máquina de escribir).
+   Modo 2: la carta completa, con scroll. Los dos leen el MISMO texto: #letter.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var root    = document.documentElement;
+  var scene   = document.getElementById("scene");
+  var bloom   = document.getElementById("bloom");
+  var intro   = document.getElementById("intro");
+  var openBtn = document.getElementById("openBtn");
+  var reader  = document.getElementById("reader");
+  var view    = document.getElementById("readerView");
+  var flow    = document.getElementById("readerFlow");
+  var bar     = document.getElementById("readerBar");
+  var tapHint = document.getElementById("tapHint");
+  var letter  = document.getElementById("letter");
+  var finale  = document.getElementById("finale");
+  var progress = document.getElementById("progressBar");
+
+  var pauseBtn = document.getElementById("pauseBtn");
+  var speedBtn = document.getElementById("speedBtn");
+  var skipBtn  = document.getElementById("skipBtn");
+  var readAllBtn = document.getElementById("readAllBtn");
+  var replayBtn  = document.getElementById("replayBtn");
+
+  var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var lessMotion  = motionQuery.matches;
+
+  function now() { return performance.now(); }
+
+  /* ------------------------------------------------------------------ *
+   * 1. Arrancar la escena (el CSS original la deja pausada con .container)
+   * ------------------------------------------------------------------ */
+  var started = false;
+  function startScene() {
+    if (started) { return; }
+    started = true;
+    if (scene) { scene.classList.remove("container"); }
+  }
+  window.addEventListener("load", startScene);
+  setTimeout(startScene, 900);   // por si las fuentes no cargan (sin internet)
+
+  /* destello cálido de las flores */
+  var bloomTimer = null;
+  function bloomFlash() {
+    if (!bloom || lessMotion) { return; }
+    bloom.classList.add("is-on");
+    clearTimeout(bloomTimer);
+    bloomTimer = setTimeout(function () { bloom.classList.remove("is-on"); }, 750);
+  }
+
+  /* ------------------------------------------------------------------ *
+   * 2. Pétalos, lucecitas y corazones (canvas)
+   * ------------------------------------------------------------------ */
+  var FX = (function () {
+    var canvas = document.getElementById("fx");
+    if (!canvas || !canvas.getContext || lessMotion) {
+      return { burst: function () {}, boost: function () {}, hearts: function () {} };
+    }
+
+    var ctx = canvas.getContext("2d");
+    var W = 0, H = 0, small = false;
+    var motes = [], petals = [], hearts = [];
+    var maxPetals = 14, petalChance = 0.012;
+    var glowGold, glowWarm;
+    var last = 0;
+
+    var PETAL_COLORS = ["233,241,58", "255,217,90", "242,251,74", "255,233,138"];
+
+    function rnd(a, b) { return a + Math.random() * (b - a); }
+
+    function sprite(rgb) {
+      var s = 64;
+      var c = document.createElement("canvas");
+      c.width = c.height = s;
+      var g = c.getContext("2d");
+      var grd = g.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+      grd.addColorStop(0,   "rgba(" + rgb + ",1)");
+      grd.addColorStop(0.3, "rgba(" + rgb + ",0.42)");
+      grd.addColorStop(1,   "rgba(" + rgb + ",0)");
+      g.fillStyle = grd;
+      g.fillRect(0, 0, s, s);
+      return c;
+    }
+
+    function newMote(anywhere) {
+      // se concentran hacia el centro-abajo: alrededor de las flores
+      var spread = rnd(0.35, 1.05);
+      return {
+        x: W * 0.5 + (Math.random() - 0.5) * W * spread,
+        y: anywhere ? rnd(H * 0.15, H * 1.02) : rnd(H * 0.75, H * 1.05),
+        r: rnd(0.7, 2.3),
+        vx: rnd(-0.09, 0.09),
+        vy: rnd(-0.22, -0.05),
+        a: rnd(0.16, 0.5),
+        ph: rnd(0, Math.PI * 2),
+        sp: rnd(0.008, 0.026)
+      };
+    }
+
+    function newPetal(high) {
+      return {
+        x: rnd(-20, W + 20),
+        y: high ? rnd(-H * 0.45, -10) : rnd(-140, -20),
+        w: rnd(3.6, 7.2),
+        h: rnd(6.5, 12.5),
+        vy: rnd(0.28, 0.72),
+        vx: rnd(-0.16, 0.16),
+        rot: rnd(0, Math.PI * 2),
+        vrot: rnd(-0.011, 0.011),
+        fl: rnd(0, Math.PI * 2),
+        vfl: rnd(0.012, 0.03),
+        sway: rnd(0.4, 1.3),
+        a: rnd(0.5, 0.92),
+        c: PETAL_COLORS[(Math.random() * PETAL_COLORS.length) | 0]
+      };
+    }
+
+    function newHeart(where) {
+      // where: "any" reparte por la pantalla, "up" sale desde abajo,
+      // "burst" sale del centro-bajo, que es donde están las flores
+      var x, y;
+      if (where === "burst") { x = W * 0.5 + rnd(-W * 0.22, W * 0.22); y = H * rnd(0.7, 0.9); }
+      else if (where === "any") { x = rnd(W * 0.06, W * 0.94); y = rnd(0, H); }
+      else { x = rnd(W * 0.06, W * 0.94); y = H + rnd(10, 120); }
+      return {
+        x: x, y: y,
+        s: where === "burst" ? rnd(4, 8.5) : rnd(3.2, 6.4),
+        vy: where === "burst" ? rnd(-0.75, -0.35) : rnd(-0.28, -0.1),
+        vx: rnd(-0.08, 0.08),
+        rot: 0,
+        a: where === "burst" ? rnd(0.3, 0.6) : rnd(0.1, 0.3),
+        ph: rnd(0, Math.PI * 2),
+        tmp: where === "burst"
+      };
+    }
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = window.innerWidth;
+      H = window.innerHeight;
+      small = W < 700;
+      canvas.width  = Math.floor(W * dpr);
+      canvas.height = Math.floor(H * dpr);
+      canvas.style.width  = W + "px";
+      canvas.style.height = H + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      var wantMotes = small ? 20 : 42;
+      while (motes.length > wantMotes) { motes.pop(); }
+      while (motes.length < wantMotes) { motes.push(newMote(true)); }
+
+      var base = hearts.filter(function (h) { return !h.tmp; });
+      var wantHearts = small ? 3 : 6;
+      while (base.length > wantHearts) { base.pop(); }
+      while (base.length < wantHearts) { base.push(newHeart("any")); }
+      hearts = base.concat(hearts.filter(function (h) { return h.tmp; }));
+    }
+
+    function drawPetal(p) {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.scale(Math.cos(p.fl) * 0.85 + 0.15, 1);   // el giro en el aire
+      ctx.globalAlpha = p.a;
+      ctx.fillStyle = "rgba(" + p.c + ",1)";
+      ctx.beginPath();
+      ctx.moveTo(0, -p.h);
+      ctx.bezierCurveTo(p.w, -p.h * 0.45, p.w, p.h * 0.55, 0, p.h);
+      ctx.bezierCurveTo(-p.w, p.h * 0.55, -p.w, -p.h * 0.45, 0, -p.h);
+      ctx.closePath();
+      ctx.fill();
+      ctx.globalAlpha = p.a * 0.35;
+      ctx.strokeStyle = "rgba(255,255,255,0.7)";
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawHeart(h) {
+      ctx.save();
+      ctx.translate(h.x, h.y);
+      ctx.rotate(h.rot);
+      ctx.scale(h.s, h.s);
+      ctx.globalAlpha = h.a * (0.65 + 0.35 * Math.sin(h.ph));
+      ctx.fillStyle = h.tmp ? "rgba(255,158,140,1)" : "rgba(255,183,142,1)";
+      ctx.beginPath();
+      ctx.moveTo(0, 0.35);
+      ctx.bezierCurveTo(0, -0.3, -1, -0.28, -1, 0.42);
+      ctx.bezierCurveTo(-1, 1.05, 0, 1.4, 0, 2);
+      ctx.bezierCurveTo(0, 1.4, 1, 1.05, 1, 0.42);
+      ctx.bezierCurveTo(1, -0.28, 0, -0.3, 0, 0.35);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function frame(t) {
+      window.requestAnimationFrame(frame);
+      if (document.hidden) { last = t; return; }
+
+      var dt = last ? Math.min((t - last) / 16.667, 3) : 1;
+      last = t;
+
+      ctx.clearRect(0, 0, W, H);
+      var k;
+
+      for (k = 0; k < motes.length; k++) {
+        var m = motes[k];
+        m.ph += m.sp * dt;
+        m.x  += (m.vx + Math.sin(m.ph) * 0.12) * dt;
+        m.y  += m.vy * dt;
+        if (m.y < -30 || m.x < -60 || m.x > W + 60) { motes[k] = newMote(false); continue; }
+        var ma = m.a * (0.45 + 0.55 * Math.sin(m.ph));
+        if (ma <= 0.01) { continue; }
+        ctx.globalAlpha = ma;
+        var sz = m.r * 7;
+        ctx.drawImage(k % 3 === 0 ? glowWarm : glowGold, m.x - sz / 2, m.y - sz / 2, sz, sz);
+      }
+      ctx.globalAlpha = 1;
+
+      for (k = hearts.length - 1; k >= 0; k--) {
+        var hh = hearts[k];
+        hh.ph += 0.014 * dt;
+        hh.x  += (hh.vx + Math.sin(hh.ph * 0.8) * 0.13) * dt;
+        hh.y  += hh.vy * dt;
+        hh.rot = Math.sin(hh.ph * 0.5) * 0.3;
+        if (hh.tmp) { hh.a *= Math.pow(0.992, dt); }
+        if (hh.y < -40 || (hh.tmp && hh.a < 0.02)) {
+          if (hh.tmp) { hearts.splice(k, 1); } else { hearts[k] = newHeart("up"); }
+          continue;
+        }
+        drawHeart(hh);
+      }
+      ctx.globalAlpha = 1;
+
+      if (petals.length < maxPetals && Math.random() < petalChance * dt) {
+        petals.push(newPetal(false));
+      }
+      for (k = petals.length - 1; k >= 0; k--) {
+        var p = petals[k];
+        p.fl  += p.vfl * dt;
+        p.rot += p.vrot * dt;
+        p.x   += (p.vx + Math.sin(p.fl * 0.6) * p.sway * 0.35) * dt;
+        p.y   += p.vy * dt;
+        if (p.y > H + 60) { petals.splice(k, 1); continue; }
+        drawPetal(p);
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    glowGold = sprite("255,225,130");
+    glowWarm = sprite("255,180,90");
+    resize();
+    window.addEventListener("resize", resize);
+    window.requestAnimationFrame(frame);
+
+    return {
+      burst: function (n) {
+        for (var i = 0; i < n; i++) { petals.push(newPetal(true)); }
+      },
+      hearts: function (n) {
+        if (hearts.length > 60) { return; }
+        for (var i = 0; i < n; i++) { hearts.push(newHeart("burst")); }
+      },
+      boost: function (on) {
+        if (on) { maxPetals = small ? 26 : 46; petalChance = 0.095; }
+        else    { maxPetals = small ? 8 : 14;  petalChance = 0.012; }
+      }
+    };
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 3. Contador: desde el 28 de marzo de 2025
+   * ------------------------------------------------------------------ */
+  var START = new Date(2025, 2, 28);          // ojo: mes 2 = marzo
+
+  function daysInPreviousMonth(date) {
+    return new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+  }
+
+  function elapsed(from, to) {
+    var y = to.getFullYear() - from.getFullYear();
+    var m = to.getMonth()    - from.getMonth();
+    var d = to.getDate()     - from.getDate();
+    if (d < 0) { m -= 1; d += daysInPreviousMonth(to); }
+    if (m < 0) { y -= 1; m += 12; }
+    return { y: y, m: m, d: d };
+  }
+
+  function unit(n, one, many) { return n + " " + (n === 1 ? one : many); }
+
+  function togetherText(scale) {
+    var now2 = new Date();
+    if (now2 < START) { return "0 días"; }
+    var t = elapsed(START, now2);
+    var f = (scale === undefined) ? 1 : scale;
+    var y = Math.round(t.y * f), m = Math.round(t.m * f), d = Math.round(t.d * f);
+
+    var parts = [];
+    if (y > 0) { parts.push(unit(y, "año", "años")); }
+    if (m > 0) { parts.push(unit(m, "mes", "meses")); }
+    if (d > 0 || parts.length === 0) { parts.push(unit(d, "día", "días")); }
+
+    return parts.length > 1
+      ? parts.slice(0, -1).join(", ") + " y " + parts[parts.length - 1]
+      : parts[0];
+  }
+
+  function paintCounters() {
+    var all = document.querySelectorAll(".counter__value");
+    for (var i = 0; i < all.length; i++) { all[i].textContent = togetherText(); }
+  }
+
+  /* cuenta desde cero hasta el número real: un guiño después de
+     "si ha pasado bastante" */
+  function countUp(el) {
+    if (lessMotion) { el.textContent = togetherText(); return; }
+    var t0 = now(), dur = 1600;
+    (function step() {
+      var t = Math.min(1, (now() - t0) / dur);
+      el.textContent = togetherText(1 - Math.pow(1 - t, 3));
+      if (t < 1) { window.requestAnimationFrame(step); }
+    })();
+  }
+
+  paintCounters();
+  setInterval(paintCounters, 60000);
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) { paintCounters(); }
+  });
+
+  /* ------------------------------------------------------------------ *
+   * 4. La máquina de escribir
+   * ------------------------------------------------------------------ */
+  var TYPE = (function () {
+
+    /* lo que "escribe y borra" antes de decidirse — como dice la carta:
+       "nose ni como empezar esto la verdad" */
+    var GHOSTS = ["hola mi amor,", "Kari,"];
+
+    var beats = [];
+    var bi = -1;
+    var state = "idle";         // idle | hold | typing | erasing | done
+    var cur = null;             // { p, segs, spans, si, ci }
+    var ghostEl = null;
+    var nextAt = 0, holdUntil = 0;
+    var speed = 1;
+    var paused = false, pausedAt = 0;
+    var running = false;
+
+    /* --- construir la lista de momentos desde el DOM de la carta --- */
+    function build() {
+      var list = [{ k: "note", ms: 2300 }];
+      GHOSTS.forEach(function (g) { list.push({ k: "ghost", t: g }); });
+
+      var inner = letter.querySelector(".letter__inner");
+      var kids = inner ? inner.children : [];
+      for (var i = 0; i < kids.length; i++) {
+        var node = kids[i];
+        if (node.classList.contains("chapter")) {
+          for (var j = 0; j < node.children.length; j++) {
+            list.push({ k: "line", src: node.children[j] });
+          }
+          list.push({ k: "pause", ms: 460 });
+        } else if (node.classList.contains("divider")) {
+          list.push({ k: "divider", mark: node.textContent.trim() });
+        } else if (node.getAttribute("data-beat") === "counter") {
+          list.push({ k: "node", src: node, ms: 3200, counter: true });
+        } else if (node.getAttribute("data-beat") === "stamp") {
+          list.push({ k: "node", src: node, ms: 2400 });
+        }
+      }
+      return list;
+    }
+
+    /* --- utilidades de layout ------------------------------------- */
+    /* el flujo está anclado abajo: al añadir una línea todo sube.
+       Se anima ese salto para que no brinque. */
+    function slideUp(px) {
+      if (px <= 0 || lessMotion) { return; }
+      flow.style.transition = "none";
+      flow.style.transform  = "translateY(" + px + "px)";
+      void flow.offsetHeight;
+      flow.style.transition = "transform .42s cubic-bezier(.22,.61,.36,1)";
+      flow.style.transform  = "translateY(0)";
+    }
+
+    function prune() {
+      // las líneas que ya salieron del recuadro se quitan del DOM.
+      // Al estar anclado abajo, quitarlas por arriba no mueve nada.
+      var guard = 0;
+      while (flow.children.length > 3 &&
+             flow.offsetHeight > view.clientHeight * 2.4 &&
+             guard++ < 50) {
+        flow.removeChild(flow.firstChild);
+      }
+    }
+
+    /* mete el elemento reservando ya su altura final, para que el texto
+       no descuadre el bloque mientras se escribe */
+    function attach(el, reserveFrom) {
+      var before = flow.offsetHeight;
+      flow.appendChild(el);
+      if (reserveFrom !== undefined) { el.style.minHeight = reserveFrom + "px"; }
+      slideUp(flow.offsetHeight - before);
+    }
+
+    /* --- segmentos de una línea (texto normal + la risa) ----------- */
+    function segsOf(p) {
+      var segs = [];
+      for (var i = 0; i < p.childNodes.length; i++) {
+        var n = p.childNodes[i];
+        if (n.nodeType === 3) {
+          if (n.nodeValue) { segs.push({ t: n.nodeValue, c: null }); }
+        } else if (n.nodeType === 1) {
+          segs.push({ t: n.textContent, c: n.className });
+        }
+      }
+      return segs.length ? segs : [{ t: p.textContent, c: null }];
+    }
+
+    /* --- ritmo ------------------------------------------------------ */
+    function charDelay(ch) {
+      var d = 13 + Math.random() * 9;
+      if (ch === " ") { d += 6; }
+      else if (ch === "," || ch === ";") { d += 140; }
+      else if (ch === "." || ch === "?" || ch === "!") { d += 220; }
+      return d / speed;
+    }
+
+    function holdFor(p) {
+      var base = 260;
+      if (p.classList.contains("quote"))   { base = 600; }
+      if (p.classList.contains("love"))    { base = 500; }
+      if (p.classList.contains("beat"))    { base = 680; }
+      if (p.classList.contains("open"))    { base = 950; }
+      if (p.classList.contains("forever")) { base = 1400; }
+      // las tandas ("te amo cuando...", "mas risas, mas salidas...") van seguidas
+      if (p.classList.contains("run"))     { base = Math.min(base, 150); }
+      var extra = parseInt(p.getAttribute("data-hold") || "0", 10) || 0;
+      return (base + extra) / speed;
+    }
+
+    /* --- arrancar cada tipo de momento ------------------------------ */
+    function startNote() {
+      var el = document.createElement("div");
+      el.className = "typing-note";
+      el.innerHTML = "césar está escribiendo<i></i><i></i><i></i>";
+      el.id = "typingNote";
+      attach(el);
+      state = "hold";
+      holdUntil = now() + beats[bi].ms / speed;
+    }
+
+    function dropNote() {
+      var el = document.getElementById("typingNote");
+      if (!el) { return; }
+      el.classList.add("is-gone");
+      setTimeout(function () { if (el.parentNode) { el.parentNode.removeChild(el); } }, 700);
+    }
+
+    function startGhost(b) {
+      dropNote();
+      if (!ghostEl) {
+        var before = flow.offsetHeight;
+        ghostEl = document.createElement("p");
+        ghostEl.className = "ln open";
+        var sp = document.createElement("span");
+        sp.textContent = b.t;                 // primero completo: así se mide el alto real
+        ghostEl.appendChild(sp);
+        flow.appendChild(ghostEl);
+        ghostEl.style.minHeight = ghostEl.offsetHeight + "px";
+        sp.textContent = "";
+        slideUp(flow.offsetHeight - before);
+      }
+      ghostEl.className = "ln open is-typing";
+      ghostEl.firstChild.textContent = "";
+      cur = {
+        p: ghostEl,
+        segs: [{ t: b.t, c: null }],
+        spans: [ghostEl.firstChild],
+        si: 0, ci: 0, ghost: true
+      };
+      state = "typing";
+      nextAt = now();
+    }
+
+    function startLine(b) {
+      dropNote();
+      var src = b.src;
+      var segs = segsOf(src);
+      var before = flow.offsetHeight;
+      var p, reuse = false;
+
+      // la primera línea de verdad se queda con el elemento de los borradores
+      if (ghostEl) { p = ghostEl; ghostEl = null; reuse = true; }
+      else { p = document.createElement("p"); }
+
+      p.style.minHeight = "";
+      p.innerHTML = "";
+      p.className = src.className;
+      if (src.getAttribute("data-fx"))   { p.setAttribute("data-fx", src.getAttribute("data-fx")); }
+      if (src.getAttribute("data-hold")) { p.setAttribute("data-hold", src.getAttribute("data-hold")); }
+
+      var spans = segs.map(function (s) {
+        var el = document.createElement("span");
+        if (s.c) { el.className = s.c; }
+        el.textContent = s.t;          // primero completo: así se mide el alto real
+        p.appendChild(el);
+        return el;
+      });
+
+      if (!reuse) { flow.appendChild(p); }
+      p.style.minHeight = p.offsetHeight + "px";
+      spans.forEach(function (el) { el.textContent = ""; });
+      slideUp(flow.offsetHeight - before);
+
+      p.classList.add("is-typing");
+      cur = { p: p, segs: segs, spans: spans, si: 0, ci: 0, ghost: false };
+      state = "typing";
+      nextAt = now();
+    }
+
+    function startBlock(b) {
+      dropNote();
+      var el;
+      if (b.k === "divider") {
+        el = document.createElement("div");
+        el.className = "divider";
+        el.setAttribute("aria-hidden", "true");
+        el.innerHTML = "<span>" + b.mark + "</span>";
+      } else {
+        el = b.src.cloneNode(true);
+        el.classList.remove("reveal");
+        el.removeAttribute("data-beat");
+        var v = el.querySelector(".counter__value");
+        if (v) { v.removeAttribute("id"); }
+      }
+      attach(el);
+      if (b.counter) {
+        var val = el.querySelector(".counter__value");
+        if (val) { countUp(val); }
+      }
+      prune();
+      state = "hold";
+      holdUntil = now() + (b.ms || 850) / speed;
+    }
+
+    /* --- escribir / borrar ------------------------------------------ */
+    function typeChar() {
+      var s = cur.segs[cur.si];
+      if (!s) { return false; }
+      if (cur.ci >= s.t.length) {
+        cur.si++;
+        if (cur.si >= cur.segs.length) { return false; }
+        cur.ci = 0;
+        return true;
+      }
+      var ch = s.t.charAt(cur.ci);
+      cur.ci++;
+      cur.spans[cur.si].textContent = s.t.slice(0, cur.ci);
+      nextAt += charDelay(ch);
+      return true;
+    }
+
+    function completeLine() {
+      cur.segs.forEach(function (s, i) { cur.spans[i].textContent = s.t; });
+      cur.si = cur.segs.length;
+    }
+
+    function finishLine() {
+      var p = cur.p;
+      p.classList.remove("is-typing");
+
+      if (cur.ghost) {
+        state = "erasing";
+        nextAt = now() + 620 / speed;
+        cur.ci = cur.segs[0].t.length;
+        return;
+      }
+
+      p.style.minHeight = "";
+
+      var fx = p.getAttribute("data-fx");
+      if (fx === "love")   { bloomFlash(); FX.hearts(9); }
+      if (fx === "petals") { FX.burst(16); }
+
+      var risa = p.querySelector(".risa");
+      if (risa) { risa.classList.add("is-pop"); }
+
+      state = "hold";
+      holdUntil = now() + holdFor(p);
+      prune();
+      cur = null;
+    }
+
+    function eraseChar() {
+      if (cur.ci <= 0) { return false; }
+      cur.ci--;
+      cur.spans[0].textContent = cur.segs[0].t.slice(0, cur.ci);
+      nextAt += 26 / speed;
+      return true;
+    }
+
+    function finishErase() {
+      cur.spans[0].textContent = "";
+      cur = null;
+      state = "hold";
+      holdUntil = now() + 320 / speed;
+    }
+
+    /* --- máquina de estados ----------------------------------------- */
+    function step() {
+      bi++;
+      var b = beats[bi];
+      progressTo(bi / beats.length);
+
+      if (!b) { finish(); return; }
+      if (b.k === "note")     { startNote(); }
+      else if (b.k === "ghost")   { startGhost(b); }
+      else if (b.k === "line")    { startLine(b); }
+      else if (b.k === "divider" || b.k === "node") { startBlock(b); }
+      else if (b.k === "pause")   { state = "hold"; holdUntil = now() + b.ms / speed; }
+    }
+
+    function tick() {
+      window.requestAnimationFrame(tick);
+      if (!running || paused || document.hidden) { return; }
+
+      var t = now();
+      var guard = 0;
+
+      if (state === "typing") {
+        if (nextAt < t - 400) { nextAt = t; }
+        while (nextAt <= t && guard++ < 400) {
+          if (!typeChar()) { finishLine(); return; }
+        }
+      } else if (state === "erasing") {
+        if (nextAt < t - 400) { nextAt = t; }
+        while (nextAt <= t && guard++ < 300) {
+          if (!eraseChar()) { finishErase(); return; }
+        }
+      } else if (state === "hold") {
+        if (t >= holdUntil) { step(); }
+      }
+    }
+
+    function finish() {
+      state = "done";
+      running = false;
+      onDone();
+    }
+
+    /* --- controles --------------------------------------------------- */
+    function nudge() {
+      if (!running || paused) { return; }
+      if (state === "typing")      { completeLine(); finishLine(); }
+      else if (state === "erasing"){ finishErase(); }
+      else if (state === "hold")   { holdUntil = 0; }
+      hideHint();
+    }
+
+    function hideHint() {
+      if (tapHint) { tapHint.classList.add("is-gone"); }
+    }
+
+    var onDone = function () {};
+
+    return {
+      start: function (done) {
+        onDone = done || function () {};
+        beats = build();
+        bi = -1;
+        cur = null;
+        ghostEl = null;
+        paused = false;
+        speed = 1;
+        flow.innerHTML = "";
+        flow.style.transform = "translateY(0)";
+        running = true;
+        state = "hold";
+        holdUntil = now() + 500;
+        window.requestAnimationFrame(tick);
+      },
+      stop: function () { running = false; },
+      nudge: nudge,
+      isRunning: function () { return running; },
+      setSpeed: function (v) { speed = v; },
+      getSpeed: function () { return speed; },
+      togglePause: function () {
+        if (!running) { return false; }
+        paused = !paused;
+        if (paused) { pausedAt = now(); }
+        else { var d = now() - pausedAt; nextAt += d; holdUntil += d; }
+        return paused;
+      },
+      skip: function () { running = false; finish(); }
+    };
+  })();
+
+  /* ------------------------------------------------------------------ *
+   * 5. Barra de progreso
+   * ------------------------------------------------------------------ */
+  function progressTo(f) {
+    if (!progress) { return; }
+    progress.style.width = Math.min(100, Math.max(0, f * 100)) + "%";
+  }
+
+  /* ------------------------------------------------------------------ *
+   * 6. Pantalla final
+   * ------------------------------------------------------------------ */
+  function showFinale(asStage) {
+    finale.hidden = false;
+    finale.classList.toggle("is-stage", !!asStage);
+    // un frame para que el navegador aplique el estado inicial de la transición
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () { finale.classList.add("is-in"); });
+    });
+    if (asStage) { setTimeout(function () { FX.boost(true); }, 4200); }
+  }
+
+  function endOfLetter() {
+    reader.classList.add("is-leaving");
+    if (bar) { bar.classList.remove("is-live"); }
+    progressTo(1);
+    setTimeout(function () {
+      reader.hidden = true;
+      reader.classList.remove("is-leaving", "is-live");
+      showFinale(true);
+    }, lessMotion ? 0 : 1400);
+  }
+
+  /* ------------------------------------------------------------------ *
+   * 7. Modo 2: la carta completa, con scroll
+   * ------------------------------------------------------------------ */
+  var revealsReady = false;
+  function initReveals() {
+    if (revealsReady) { return; }
+    revealsReady = true;
+    var items = letter.querySelectorAll(".reveal");
+    if (lessMotion || !("IntersectionObserver" in window)) {
+      for (var i = 0; i < items.length; i++) { items[i].classList.add("is-in"); }
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+    for (var j = 0; j < items.length; j++) { io.observe(items[j]); }
+  }
+
+  var scrollBound = false;
+  var ticking = false;
+  function onScroll() {
+    if (ticking) { return; }
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progressTo(max > 0 ? window.pageYOffset / max : 1);
+      var hint = document.getElementById("scrollHint");
+      if (hint && window.pageYOffset > 120) { hint.classList.add("is-gone"); }
+      ticking = false;
+    });
+  }
+
+  function showScroll() {
+    TYPE.stop();
+    reader.hidden = true;
+    root.classList.remove("is-locked", "mode-read");
+    root.classList.add("mode-scroll");
+
+    letter.hidden = false;
+    finale.hidden = false;
+    finale.classList.remove("is-stage");
+    finale.classList.add("is-in");
+
+    paintCounters();
+    window.scrollTo(0, 0);
+    initReveals();
+
+    if (!scrollBound) {
+      scrollBound = true;
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+    }
+    if (progress) { progress.style.transition = "width .12s linear"; }
+    onScroll();
+  }
+
+  function showTypewriter() {
+    root.classList.remove("mode-scroll");
+    root.classList.add("is-locked", "mode-read");
+    letter.hidden = true;
+    finale.hidden = true;
+    finale.classList.remove("is-in", "is-stage");
+    window.scrollTo(0, 0);
+
+    reader.hidden = false;
+    if (tapHint) { tapHint.classList.remove("is-gone"); }
+    if (progress) { progress.style.transition = "width .4s linear"; }
+    progressTo(0);
+
+    window.requestAnimationFrame(function () { reader.classList.add("is-live"); });
+    setTimeout(function () { if (bar) { bar.classList.add("is-live"); } }, 3200);
+    setTimeout(function () { if (tapHint) { tapHint.classList.add("is-gone"); } }, 14000);
+
+    TYPE.start(endOfLetter);
+  }
+
+  /* ------------------------------------------------------------------ *
+   * 8. Abrir la carta
+   * ------------------------------------------------------------------ */
+  var opened = false;
+  function openLetter() {
+    if (opened) { return; }
+    opened = true;
+
+    startScene();
+    root.classList.add("is-open");
+    if (intro) { intro.classList.add("is-leaving"); }
+    FX.burst(lessMotion ? 0 : 22);
+
+    setTimeout(function () {
+      if (intro) { intro.hidden = true; }
+      // quien pide menos movimiento se salta la máquina de escribir
+      if (lessMotion) { showScroll(); } else { showTypewriter(); }
+    }, lessMotion ? 0 : 1100);
+  }
+
+  if (openBtn) { openBtn.addEventListener("click", openLetter); }
+
+  /* ------------------------------------------------------------------ *
+   * 9. Controles del lector
+   * ------------------------------------------------------------------ */
+  if (reader) {
+    reader.addEventListener("click", function (ev) {
+      if (ev.target.closest && ev.target.closest(".reader__bar")) { return; }
+      TYPE.nudge();
+    });
+  }
+
+  document.addEventListener("keydown", function (ev) {
+    if (reader.hidden) { return; }
+    if (ev.key === " " || ev.key === "Enter") {
+      if (ev.target && ev.target.tagName === "BUTTON") { return; }
+      ev.preventDefault();
+      TYPE.nudge();
+    }
+  });
+
+  var SPEEDS = [1, 1.8, 3];
+  var speedIdx = 0;
+  if (speedBtn) {
+    speedBtn.addEventListener("click", function () {
+      speedIdx = (speedIdx + 1) % SPEEDS.length;
+      TYPE.setSpeed(SPEEDS[speedIdx]);
+      speedBtn.textContent = speedIdx === 0 ? "más rápido" : "velocidad ×" + SPEEDS[speedIdx];
+      speedBtn.setAttribute("aria-pressed", speedIdx > 0 ? "true" : "false");
+    });
+  }
+
+  if (pauseBtn) {
+    pauseBtn.addEventListener("click", function () {
+      var p = TYPE.togglePause();
+      pauseBtn.textContent = p ? "seguir" : "pausa";
+      pauseBtn.setAttribute("aria-pressed", p ? "true" : "false");
+    });
+  }
+
+  if (skipBtn) { skipBtn.addEventListener("click", function () { TYPE.skip(); }); }
+  if (readAllBtn) { readAllBtn.addEventListener("click", showScroll); }
+  if (replayBtn) {
+    replayBtn.addEventListener("click", function () {
+      if (speedBtn) {
+        speedIdx = 0;
+        speedBtn.textContent = "más rápido";
+        speedBtn.setAttribute("aria-pressed", "false");
+      }
+      if (pauseBtn) {
+        pauseBtn.textContent = "pausa";
+        pauseBtn.setAttribute("aria-pressed", "false");
+      }
+      FX.boost(false);
+      showTypewriter();
+    });
+  }
+
+  /* si cambia la preferencia de movimiento a mitad de camino */
+  if (motionQuery.addEventListener) {
+    motionQuery.addEventListener("change", function () { lessMotion = motionQuery.matches; });
+  }
+})();
+</script>
+
+</body>
+</html>
